@@ -1,6 +1,6 @@
 # smbtimeline
 ## An automated timeline for SMB Traffic
-smbtimeline is a tool to produce a timeline out of SMB traffic. Inspired by the manually work of putting together an investigative timeline from SMB traffic, its purpose is to provide a timeline from a given pcap file. Particularly as Incident Response is about to focus on the right amount of details at the right time, smbtimeline provides an overview about the SMB traffic and not showing every possible bit of information but still enriching packets with useful details. In order to archive this goal, smbtimeline arranges not only SMB commands, but also important commands taken from protocols which utilize SMB as transport medium, in an easy to handle .csv file. 
+smbtimeline is a tool to produce a timeline out of SMB traffic. Inspired by the manually work of putting together an investigative timeline from SMB traffic, its purpose is to provide a timeline from a given pcap file. Incident Response is about to focus on the right amount of details at the right time, smbtimeline provides an overview about the SMB traffic and not showing every possible bit of information but still enriching packets with useful details. In order to archive this goal, smbtimeline arranges not only SMB commands, but also important commands taken from protocols which utilize SMB as transport medium, in an easy to handle .csv file. Filtering within a csv based timeline is usually easier compared to crafting filters and command line magic.
 ### Supported RPC/DCE protocols transported by SMB
 SAMR, LSAD, SRVS, WKST, WINREG, SCMR, ATSVC
 
@@ -33,7 +33,18 @@ python ./smbtimeline.py -f test.pcap
 ```
 
 ## Limitations
-more to come
+* A timeline is an overview, if you want every single detail of a packet, take the frame.number and look into the specific ticket within Wireshark or similar tools.
+* smbtimeline is fully depending on the parsing of Wireshark/TShark.
+* Wireshark/TShark csv output has limitations in situations where multiple SMB/RPC commands are present which does not share the same parameters. In these situations double check the results within Wireshark/TShark in order to validate the correct assignment of the parameters. 
+* Not considered SMB commands:
+  * SMBv1: deprecated, obsolescent or obsolete commands
+  * SMBv1: 'FLUSH', 'ECHO', 'FIND_CLOSE', 'NT_CANCEL', 'OPEN_PRINT_FILE',
+'INVALID', 'NO_ANDX_COMMAND'
+  * SMBv2: 'CANCEL', 'ECHO', 'CHANGE_NOTIFY', 'OPLOCK_BREAK'
+MABC String, used in log2timeline csv output is not design for network traffic. Apart from that, the MACB String feature should be considered beta and needs further testing and validation. Feedback and input is very welcome.
+
+
+
 
 ## License
 * Free to use, reuse and redistribute for everyone.
