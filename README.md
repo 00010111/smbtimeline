@@ -43,8 +43,9 @@ python ./smbtimeline.py -f test.pcap
   * SMBv2: 'CANCEL', 'ECHO', 'CHANGE_NOTIFY', 'OPLOCK_BREAK'
 MABC String, used in log2timeline csv output is not design for network traffic. Apart from that, the MACB String feature should be considered beta and needs further testing and validation. Feedback and input is very welcome.
 
-
-
+## Author
+* Twitter: [@b00010111](https://twitter.com/b00010111)
+* Blog: https://00010111.at/
 
 ## License
 * Free to use, reuse and redistribute for everyone.
@@ -53,4 +54,4 @@ MABC String, used in log2timeline csv output is not design for network traffic. 
 
 ## Bugs, Discussions, Feature requests, contact
 * open an issue
-* contact me via twitter: @b00010111
+* contact me via twitter
