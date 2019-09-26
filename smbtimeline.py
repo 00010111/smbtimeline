@@ -237,8 +237,8 @@ smb2_filter = "smb2 and ( (smb2.cmd == 0x00) or (smb2.cmd == 0x01) or (smb2.cmd 
 def usage():
 	print ("Usage: ")
 	print ("-f, --file <PATH> \n\tPath to pcap file containing traffic to analyze, mandatory parameter")
-	print ("-2, --smb2 \n\tSMB modus: create a timeline for SMB2 and SMB3 traffic, non mandatory parameter, default active if no parameter for SMB modus is given.")
-	print ("-1, --smb1 \n\tSMB modus: create a timeline for SMB1 traffic, non mandatory parameter, default not active if no parameter for SMB modus is given.")
+	print ("-2, --smb2 \n\tSMB modus: create a timeline for SMB2 and SMB3 traffic, non mandatory parameter, default active if no parameter for SMB modus is given. Output will be stored in current working directory: timeline_smb2.csv")
+	print ("-1, --smb1 \n\tSMB modus: create a timeline for SMB1 traffic, non mandatory parameter, default not active if no parameter for SMB modus is given. Output will be stored in current working directory: timeline_smb1.csv")
 	print ("-p, --protocol <PATH> \n\tPath to protocol file, non mandatory parameter, if not given no protocol will be written.")
 	print ("-e, --extended <PATH> \n\tPath to file, non mandatory parameter, if given a combined timeline in log2timeline format")
 	print ("-s, --strip \n\tstrip traffic and create a new pcap only containing smb traffic, see code or protocol in regards to used bpf (filter)")
