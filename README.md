@@ -8,8 +8,8 @@ SAMR, LSAD, SRVS, WKST, WINREG, SCMR, ATSVC
 Option | Explanation
 --- | ---
 -f, --file \<PATH\> | Path to pcap file containing traffic to analyze, mandatory parameter
--2, --smb2 | SMB modus: create a timeline for SMB2 and SMB3 traffic, non-mandatory parameter, default active if no parameter for SMB modus is given.
--1, --smb1 | SMB modus: create a timeline for SMB1 traffic, non-mandatory parameter, default not active if no parameter for SMB modus is given.
+-2, --smb2 | SMB modus: create a timeline for SMB2 and SMB3 traffic, non-mandatory parameter, default active if no parameter for SMB modus is given. Output will be stored in current working directory: timeline_smb2.csv
+-1, --smb1 | SMB modus: create a timeline for SMB1 traffic, non-mandatory parameter, default not active if no parameter for SMB modus is given. Output will be stored in current working directory: timeline_smb1.csv
 -p, --protocol \<PATH\> | Path to protocol file, non-mandatory parameter, if not given no protocol will be written.
 -e, --extended \<PATH\> | Path to file, non-mandatory parameter, if given a combined timeline in log2timeline format
 -s, --strip | strip traffic and create a new pcap only containing smb traffic, see code or protocol in regards to used bpf (filter)
