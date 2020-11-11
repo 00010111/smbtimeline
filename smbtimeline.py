@@ -26,7 +26,7 @@
 #-> user handle is used later in queryUserInfoetc.
 #->-> this would mean: we need a dict name to rid, rid to user_handle, in on session to enrich with name
 #-> same with SID if used
-smb_samr_dict = {'0':'SamrConnect: returns handle to server object','1':'SamrCloseHandle: closes any context handle of RPC interface','2':'SamrSetSecurityObject: set access control on object','3':'SamrQuerySecurityObject: query access control on object','4':'Opnum4NotUsedOnWire: opnum reserved for local use','5':'SamrLookupDomainInSamServer: obtains SID of object','6':'SamrEnumerateDomainsInSamServer: listing all domains hosted by server','7':'SamrOpenDomain: get handle to domain object via SID','8':'SamrQueryInformationDomain: get attributes from a domain object','9':'SamrSetInformationDomain: updates attributes on a domain object','10':'SamrCreateGroupInDomain: creates group object within domain','11':'SamrEnumerateGroupsInDomain: enumerates all groups','12':'SamrCreateUserInDomain: creates a user','13':'SamrEnumerateUsersInDomain: enumerates all user','14':'SamrCreateAliasInDomain: creates an alias','15':'SamrEnumerateAliasesInDomain: enumerates all aliases','16':'SamrGetAliasMembership: obtains list of aliases given set of SIDs is a member','17':'SamrLookupNamesInDomain: translates set of account names into set of RIDs','18':'SamrLookupIdsInDomain: translates a set of RIDsinto account names','19':'SamrOpenGroup: get handle to group via RID','20':'SamrQueryInformationGroup: obtains attributes from a group object','21':'SamrSetInformationGroup: updates attributes on group object','22':'SamrAddMemberToGroup: add member to group','23':'SamrDeleteGroup: removes a group object','24':'SamrRemoveMemberFromGroup: removes member from group','25':'SamrGetMembersInGroup: get members of group','26':'SamrSetMemberAttributesOfGroup: set member attributes of group','27':'SamrOpenAlias: get handle to alias by RID','28':'SamrQueryInformationAlias: get attributes from an alias','29':'SamrSetInformationAlias: updates attributes on an alias','30':'SamrDeleteAlias: delete alias by handle','31':'SamrAddMemberToAlias: adds member (via SID) to alias','32':'SamrRemoveMemberFromAlias: removes member (via SID) from alias','33':'SamrGetMembersInAlias: get membership SID list of alias','34':'SamrOpenUser: get handle for User by RID','35':'SamrDeleteUser: delete a user','36':'SamrQueryInformationUser: get attributes from user object','37':'SamrSetInformationUser: updates attributes on user object','38':'SamrChangePasswordUser: change password of user object','39':'SamrGetGroupsForUser: get RID of groups given user object is member of','40':'SamrQueryDisplayInformation: get list of accounts in ascending name-sorted order, starting at given index','41':'SamrGetDisplayEnumerationIndex: get index into an ascending account-name–sorted list of accounts','42':'Opnum42NotUsedOnWire: opnum reserved for local use','43':'Opnum43NotUsedOnWire: opnum reserved for local use','44':'SamrGetUserDomainPasswordInformation: get password policy info for domain given user belongs to','45':'SamrRemoveMemberFromForeignDomain: removes member (by sid) from all aliases','46':'SamrQueryInformationDomain2: get attributes from domain object','47':'SamrQueryInformationUser2: get attributes from user object','48':'SamrQueryDisplayInformation2: get list of accounts in ascending name-sorted order, starting at given index','49':'SamrGetDisplayEnumerationIndex2: get index into an ascending account-name–sorted list of accounts,given a prefix to match','50':'SamrCreateUser2InDomain: creates a user with given name','51':'SamrQueryDisplayInformation3: get list of accounts in ascending name-sorted order, starting at given index','52':'SamrAddMultipleMembersToAlias: adds multiple member SIDs to alias','53':'SamrRemoveMultipleMembersFromAlias: remove multiple member SIDs from alias','54':'SamrOemChangePasswordUser2: changes a user\'s password by given user name','55':'SamrUnicodeChangePasswordUser2: changes a user\'s password by given user name','56':'SamrGetDomainPasswordInformation: get password policy information without authenticating','57':'SamrConnect2: returns handle to server object','58':'SamrSetInformationUser2: updates attributes on a user object','59':'Opnum59NotUsedOnWire: opnum reserved for local use','60':'Opnum60NotUsedOnWire: opnum reserved for local use','61':'Opnum61NotUsedOnWire: opnum reserved for local use','62':'SamrConnect4: returns handle to server object','63':'Opnum63NotUsedOnWire: opnum reserved for local use','64':'SamrConnect5: returns handle to server object','65':'SamrRidToSid: get SID of account by given RID','66':'SamrSetDSRMPassword: sets a local recovery password for user RID','67':'SamrValidatePassword: validate password agains stored policy','68':'Opnum68NotUsedOnWire: opnum reserved for local use','69':'Opnum69NotUsedOnWire: opnum reserved for local use'}
+smb_samr_dict = {'0':'SamrConnect: returns handle to server object','1':'SamrCloseHandle: closes any context handle of RPC interface','2':'SamrSetSecurityObject: set access control on object','3':'SamrQuerySecurityObject: query access control on object','4':'Opnum4NotUsedOnWire: opnum reserved for local use','5':'SamrLookupDomainInSamServer: obtains SID of object','6':'SamrEnumerateDomainsInSamServer: listing all domains hosted by server','7':'SamrOpenDomain: get handle to domain object via SID','8':'SamrQueryInformationDomain: get attributes from a domain object','9':'SamrSetInformationDomain: updates attributes on a domain object','10':'SamrCreateGroupInDomain: creates group object within domain','11':'SamrEnumerateGroupsInDomain: enumerates all groups','12':'SamrCreateUserInDomain: creates a user','13':'SamrEnumerateUsersInDomain: enumerates all user','14':'SamrCreateAliasInDomain: creates an alias','15':'SamrEnumerateAliasesInDomain: enumerates all aliases','16':'SamrGetAliasMembership: obtains list of aliases given set of SIDs is a member','17':'SamrLookupNamesInDomain: translates set of account names into set of RIDs','18':'SamrLookupIdsInDomain: translates a set of RIDs into account names','19':'SamrOpenGroup: get handle to group via RID','20':'SamrQueryInformationGroup: obtains attributes from a group object','21':'SamrSetInformationGroup: updates attributes on group object','22':'SamrAddMemberToGroup: add member to group','23':'SamrDeleteGroup: removes a group object','24':'SamrRemoveMemberFromGroup: removes member from group','25':'SamrGetMembersInGroup: get members of group','26':'SamrSetMemberAttributesOfGroup: set member attributes of group','27':'SamrOpenAlias: get handle to alias by RID','28':'SamrQueryInformationAlias: get attributes from an alias','29':'SamrSetInformationAlias: updates attributes on an alias','30':'SamrDeleteAlias: delete alias by handle','31':'SamrAddMemberToAlias: adds member (via SID) to alias','32':'SamrRemoveMemberFromAlias: removes member (via SID) from alias','33':'SamrGetMembersInAlias: get membership SID list of alias','34':'SamrOpenUser: get handle for User by RID','35':'SamrDeleteUser: delete a user','36':'SamrQueryInformationUser: get attributes from user object','37':'SamrSetInformationUser: updates attributes on user object','38':'SamrChangePasswordUser: change password of user object','39':'SamrGetGroupsForUser: get RID of groups given user object is member of','40':'SamrQueryDisplayInformation: get list of accounts in ascending name-sorted order, starting at given index','41':'SamrGetDisplayEnumerationIndex: get index into an ascending account-name–sorted list of accounts','42':'Opnum42NotUsedOnWire: opnum reserved for local use','43':'Opnum43NotUsedOnWire: opnum reserved for local use','44':'SamrGetUserDomainPasswordInformation: get password policy info for domain given user belongs to','45':'SamrRemoveMemberFromForeignDomain: removes member (by sid) from all aliases','46':'SamrQueryInformationDomain2: get attributes from domain object','47':'SamrQueryInformationUser2: get attributes from user object','48':'SamrQueryDisplayInformation2: get list of accounts in ascending name-sorted order, starting at given index','49':'SamrGetDisplayEnumerationIndex2: get index into an ascending account-name–sorted list of accounts,given a prefix to match','50':'SamrCreateUser2InDomain: creates a user with given name','51':'SamrQueryDisplayInformation3: get list of accounts in ascending name-sorted order, starting at given index','52':'SamrAddMultipleMembersToAlias: adds multiple member SIDs to alias','53':'SamrRemoveMultipleMembersFromAlias: remove multiple member SIDs from alias','54':'SamrOemChangePasswordUser2: changes a user\'s password by given user name','55':'SamrUnicodeChangePasswordUser2: changes a user\'s password by given user name','56':'SamrGetDomainPasswordInformation: get password policy information without authenticating','57':'SamrConnect2: returns handle to server object','58':'SamrSetInformationUser2: updates attributes on a user object','59':'Opnum59NotUsedOnWire: opnum reserved for local use','60':'Opnum60NotUsedOnWire: opnum reserved for local use','61':'Opnum61NotUsedOnWire: opnum reserved for local use','62':'SamrConnect4: returns handle to server object','63':'Opnum63NotUsedOnWire: opnum reserved for local use','64':'SamrConnect5: returns handle to server object','65':'SamrRidToSid: get SID of account by given RID','66':'SamrSetDSRMPassword: sets a local recovery password for user RID','67':'SamrValidatePassword: validate password agains stored policy','68':'Opnum68NotUsedOnWire: opnum reserved for local use','69':'Opnum69NotUsedOnWire: opnum reserved for local use'}
 #smb_samr_extendList = [2,6,9,10,12,14,21,22,23,24,26,29,30,31,32,35,37,38,45,50,52,53,54,55,58,66]
 
 
@@ -139,25 +139,24 @@ opnum_atsvc_b_list = [0]
 #																			open TODOS																					#
 #########################################################################################################################################################################
 
+#this version:
+
 # TODO next version:
-# TODO: maybe next version: use json output
 ## TODO: implement parse at parameter.. which will be forwarded to tshark
 ### tshark -d tcp.port==8888,http Decodes tcp port 8888 as http traffic
 ## TODO: smb1
 ### smb.old_file -> filled when files are renamed.. new file name in smb.file => 0x07
-## IDEA: reduce read & write requests to a single line?
-# add timesketch export https://github.com/google/timesketch/blob/master/docs/CreateTimelineFromJSONorCSV.md
-# add feeding info into plaso file + writing "native" log2timeline parser
+# TODO: check timesketch export https://github.com/google/timesketch/blob/master/docs/CreateTimelineFromJSONorCSV.md
 # TODO: samr traffic capture RID to names, for enrichment?
 # TODO: visualization
-# TODO: write to std-out and protocol how long each step took in mm:ss
-# TODO: continue smb2_ioctl_function_dict research and adding Name: explanation form => might be not usefull at the give time.
-
+# TODO: smb_pipe, use cases
+# TODO: continue smb2_ioctl_function_dict research and adding Name: explanation form => might be not useful at the given time.
 # TODO: extended output, just smb2 openfile responses, not their requests
 #-> yes only done on packets with characteristics in responses... think about how to extend to request packet.
 
 #maybe:
 #TODO:
+## maybe: reduce read & write requests to a single line?
 ## smb2.cmd == 0x10 -> smb2.class and smb2.file_info.infolevel could it enable us to find out which infos were requested and do we want to know that? -> not really interesting in a specific meaning, as filename will be included.
 ## if smb2.cmd == 0x11 is interesting, same files as smb2.cmd == 0x10, 0x11 is setInfo
 ## smb2.file_info.infolevel -> https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/4718fc40-e539-4014-8e33-b675af74e3e1 # wireshark shows hex, site shows dec
@@ -179,13 +178,16 @@ try:
 	import re
 	from collections import defaultdict
 	import copy
+	import json
+	import traceback
+	#import time
 except Exception as e:
 	print("missing module: ")
 	print(e)
 	exit(1)
 
 #version string
-smbtimelineversion = '0.0811'
+smbtimelineversion = '0.1000'
 
 # define os we are running on; if false we are running on Windows, else we are running Linux
 os_linux = True
@@ -198,6 +200,7 @@ fname_fid_dict = {}
 packet_to_fid_dict = {}
 service_info_dict = {} # format: frame.number + service_info string -> used to extend service_info string from request to response
 registry_info_dict = {} # format: frame.number + registry_info string -> used to extend registry_info string from request to response
+wsInfoColumnDict = {}
 
 
 # control parameter:
@@ -205,7 +208,10 @@ smb1 = False
 smb2 = False
 strip = False
 clean = True
+use_json = True
 defaults = False
+remove_striped = False
+wsInfoColumn = False
 l2toutput_file = ''
 wp = ''
 inputfile = ''
@@ -223,7 +229,7 @@ smb_filter = "smb and ( (smb.cmd == 0x72) or (smb.cmd == 0x73) or (smb.cmd == 0x
 #smb2 will also cover smb3 
 # https://wiki.wireshark.org/SMB2
 ## see section "SMB2 Opcodes"
-#commands not in thsark filter:
+#commands not in tshark filter:
 # smb2.cmd == 0x0c SMB2/Cancel # smb2.cmd == 0x0d SMB2/KeepAlive # smb2.cmd == 0x0f SMB2/Notify # smb2.cmd == 0x12 SMB2/Break
 
 smb2_filter = "smb2 and ( (smb2.cmd == 0x00) or (smb2.cmd == 0x01) or (smb2.cmd == 0x02) or (smb2.cmd == 0x03) or (smb2.cmd == 0x04) or (smb2.cmd == 0x05) or (smb2.cmd == 0x06) or (smb2.cmd == 0x07) or (smb2.cmd == 0x08) or (smb2.cmd == 0x09) or (smb2.cmd == 0x0a) or (smb2.cmd == 0x0b) or (smb2.cmd == 0x0e) or (smb2.cmd == 0x10) or (smb2.cmd == 0x11))"
@@ -240,11 +246,13 @@ def usage():
 	print ("-2, --smb2 \n\tSMB modus: create a timeline for SMB2 and SMB3 traffic, non mandatory parameter, default active if no parameter for SMB modus is given. Output will be stored in current working directory: timeline_smb2.csv")
 	print ("-1, --smb1 \n\tSMB modus: create a timeline for SMB1 traffic, non mandatory parameter, default not active if no parameter for SMB modus is given. Output will be stored in current working directory: timeline_smb1.csv")
 	print ("-p, --protocol <PATH> \n\tPath to protocol file, non mandatory parameter, if not given no protocol will be written.")
-	print ("-e, --extended <PATH> \n\tPath to file, non mandatory parameter, if given a combined timeline in log2timeline format")
-	print ("-s, --strip \n\tstrip traffic and create a new pcap only containing smb traffic, see code or protocol in regards to used bpf (filter)")
-	print ("-n, --noclean \n\tdo not clean created tmp files")
+	print ("-e, --extended <PATH> \n\tPath to file, non mandatory parameter, if given a combined timeline in log2timeline format will be created")
+	print ("-s, --strip \n\tstrip traffic and create a new pcap only containing smb traffic, see code or protocol in regards to used bpf (filter).\n\t\tThe resulting pcap file will not be deleted, frame.number values from timelines will not match the original pcap file if -s is used. If you want to lookup more details for frames, use the pcap \"pcap_stripped_TIMESTAMP.pcap\" (TIMESTAMP format: YearMonthDayHourMinute). In this file the frame.numbers will match with the timelines.")
+	print ("-d, --deletestriped \n\tif -s is given the stripped pcap will be deleted. This will not allow you to match frame.number from the timelines in the original pcap file.")
+	print ("-n, --noclean \n\tdo not clean created tmp files, exception: tmp pcap file written by option -s")
+	print ("-i, --infoColumn \n\tAdds the wireshark info column to the timeline. This step needs some extra processing time.")
+	print ("-c, --csv \n\tuse csv output of tshark instead of json. This mode is deprecated since version 0.1000 and will no longer be updated.")
 	print ("-h, --help \n\tPrints this usage info and exits.")
-
 
 #
 # Function to check if system script is running on is Windows or not. function sets global os_linux variable to False if Windows, otherwise
@@ -281,6 +289,7 @@ def checktshark ():
 	except Exception as e:
 		print ("error while testing for tshark in path:")
 		print (e)
+		print(traceback.format_exc())
 		exit(1)
 			
 #
@@ -305,6 +314,7 @@ def checkdump ():
 	except Exception as e:
 		print ("error while testing for tcpdump or windump in path:")
 		print (e)
+		print(traceback.format_exc())
 		exit(1)
 
 #
@@ -314,9 +324,10 @@ def checkdump ():
 #
 def stripPCAP (pcap_source):
 	print("stripping smb traffic from given pcap")
+	start_time = time.time()
 	global os_linux
 	global wp
-	newpcap = 'pcap_stripped.pcap'
+	newpcap = 'pcap_stripped' + datetime.datetime.now().strftime("%Y%m%d%I%M") + '.pcap'
 	dumpfilter = '(port 445 or portrange 137-139)'
 	# smb ports:
 	# direct host smb TCP port 445
@@ -326,6 +337,7 @@ def stripPCAP (pcap_source):
 			writetoprotocol('Original pcap was filtered with the following filter: ' + dumpfilter + ' .\n')
 			writetoprotocol('This should be a good enough filter to strip down a large pcap before running it \n')
 			writetoprotocol('through tshark and do the heavy lifting and dissect the traffic.\n')
+			writetoprotocol('pcap file written to: '+ newpcap +'\n')
 			writetoprotocol('\n#####################################################################################\n')
 	if os_linux:
 		command = ['tcpdump', '-r', pcap_source, '-w', newpcap, '-s', '0', '-n', dumpfilter ]  # the shell command
@@ -335,18 +347,31 @@ def stripPCAP (pcap_source):
 	#process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=None)
 	process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	output, error = process.communicate()	
+	stop_time = time.time()
+	elapsed = stop_time - start_time
+	h = int(elapsed//3600)
+	m = int((elapsed%3600) // 60)
+	s = int((elapsed%3600)%60)
+	temp_durations = "total time: %d:%d:%d (hh:mm:ss)" %(h,m,s)
+	print(temp_durations)
+	if wp:
+		writetoprotocol('\n##################################### stripPCAP #####################################\n')
+		writetoprotocol('\n############################ ' + temp_durations + ' ############################\n')
+		
 	return newpcap
 
 #		
-# function to run tshark filer
+# function to run tshark filer, deprecated function -> replaced by tsharkfilter_json
 # Parameter inputfile: input pcap 
 # Parameter filter: the tshark filter which should be used with tshark
 # 					example: tsharkfilter("smb.cmd == 0x73")
-# Parameter filepath: the filepath where csv output will be written
+# Parameter filepath: the filepath where csv output will be written to
 # Parameter filtername: the filtername decides which output fields will be used
 #
 def tsharkfilter (inputfile,filter,filepath,filtername):
-	print("running filter: " + filtername)
+	global wp
+	print("running filter: " + filtername + " (this can take a while, be patient)")
+	start_time = time.time()
 	# '-E', 'separator=/t', '-E', 'quote=d', '-E', 'header=y'
 	# we generate one csv file per filter, depenting on the filtername provides
 	if filtername == "smb_filter":
@@ -367,7 +392,8 @@ def tsharkfilter (inputfile,filter,filepath,filtername):
 		exit(1)
 
 	process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-	f = open(filepath,"w")
+	#04.11 FIX
+	f = open(filepath,"w",encoding='UTF-8')
 	#output, error = process.communicate()
 	#for aline in output:
 	#	f.write(aline)
@@ -378,16 +404,787 @@ def tsharkfilter (inputfile,filter,filepath,filtername):
 		else:
 			break
 	f.close()
+	stop_time = time.time()
+	elapsed = stop_time - start_time
+	h = int(elapsed//3600)
+	m = int((elapsed%3600) // 60)
+	s = int((elapsed%3600)%60)
+	temp_durations = "total time: %d:%d:%d (hh:mm:ss)" %(h,m,s)
+	print(temp_durations)
+	if wp:
+		writetoprotocol('\n##################################### tsharkfilter #####################################\n')
+		writetoprotocol('\n############################ ' + temp_durations + ' ############################\n')
 	# TODO: read process.stderr.readline().decode('UTF-8') and write to protocol
 
-#		
+#
+# function to run tshark filer using json output of tshark
+# json output can be combined with -e fieldnames -> this output loses the capability to exactly match commands and parameters in case of two smb commands in one frame
+# Parameter inputfile: input pcap 
+# Parameter filter: the tshark filter which should be used with tshark
+# 					example: tsharkfilter("smb.cmd == 0x73")
+# Parameter filepath: the filepath where json output will be written to
+# Parameter filtername: will be used to write current processed filter to the protocol. Can be either smb_filter oder smb2_filter.
+#
+def tsharkfilter_json(inputfile,filter,filepath,filtername):
+	global wp
+	print("running filter: " + filtername + " (this can take a while, be patient)")
+	start_time = time.time()
+	if filtername == "smb_filter":
+		if wp:
+			writetoprotocol('\n######## SMB1: Tshark/Wireshark Filter -> SMB1 commands included in timeline ########\n')
+			writetoprotocol(filter + '\n')
+			writetoprotocol('\n#####################################################################################\n')	
+	elif filtername == "smb2_filter":
+		if wp:
+			writetoprotocol('\n####### SMB2/3: Tshark/Wireshark Filter -> SMB2 and SMB3 commands included in timeline #######\n')
+			writetoprotocol(filter + '\n')
+			writetoprotocol('\n#####################################################################################\n')
+	else:
+		print('UNKNOWN FILTERNAME')
+		exit(1)
+	
+	# run tshark command and write output to filepath
+	command = ['tshark', '-n', '-r', inputfile , '-Y', filter , '-T', 'json']
+	process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	f = open(filepath,"w", encoding="utf-8")
+	while True:
+		line = process.stdout.readline().decode('UTF-8')
+		if line !='':
+			f.write(line)
+		else:
+			break
+		
+	f.close()
+	
+	stop_time = time.time()
+	elapsed = stop_time - start_time
+	h = int(elapsed//3600)
+	m = int((elapsed%3600) // 60)
+	s = int((elapsed%3600)%60)
+	temp_durations = "total time: %d:%d:%d (hh:mm:ss)" %(h,m,s)
+	print(temp_durations)
+	if wp:
+		writetoprotocol('\n################################## tsharkfilter_json ##################################\n')
+		writetoprotocol('\n############################ ' + temp_durations + ' ############################\n')
+
+#
+# helper method used as object_pairs_hook for native json.load method
+# usualy all json entries are parsed to a dict. the problem in this case is, a python dict can not have duplicate keys.
+# the json given by tshark contains duplicate keys in case of multiple smb commands. without this helper function only on header and one smb command will be present in the parsed json dicts.
+# this functions solves this issue by putting dublicate keys into a list 
+# the result is that the smb section in now a list of dicts containing the headers and smb command sections.
+# array_on_duplicate_keys
+# probs to: https://stackoverflow.com/questions/14902299/json-loads-allows-duplicate-keys-in-a-dictionary-overwriting-the-first-value
+# Parameter ordered_pairs: given by native json library
+## example:
+## >>> print (p[0].get('_source').get('layers').keys())
+## dict_keys(['nbss', 'tcp', 'frame', 'eth', 'ip', 'smb2'])
+## print (p[0].get('_source').get('layers').get('smb2')[0])
+## {'SMB2 Header': {'smb2.credits.requested': '1', ...'smb2.tid': '0x00000005'}, 'Create Request (0x05)': {'smb2.filename_tree': {'smb2.olb.length':..., 'smb2.create.chain_offset': '0x00000000'}}}}
+## >>> print (p[0].get('_source').get('layers').get('smb2')[0].keys())
+## dict_keys(['SMB2 Header', 'Create Request (0x05)'])
+## >>> print (p[0].get('_source').get('layers').get('smb2')[1])
+def aodk(ordered_pairs):
+	d = {}
+	for k,v in ordered_pairs:
+		if k in d:
+			if type(d[k]) is list:
+				d[k].append(v)
+			else:
+				d[k] = [d[k],v]
+		else:
+			d[k] = v
+	return d
+		
+#
+# function to read json file and write csv timeline output file, this functions also ensures that smb packets carrying multiple smb commands are treated in the correct way.
+# for each smb command, the method handle_packet will be called, this will result in one timeline row per smb command, even if it was send in one single frame. Only the smb part is split, the rest of the packet data, like
+# frame.number etc will still be present in packet object. In oder to parse multiple smb commands to a list instead of a dict (with missing values) the help function aodk is key.
+# Parameter infile: the filepath where json input will be read from
+# Parameter timelinewriter: csv Dictwriter object to write output to
+# Parameter filtername: will be added to csv to help identify filter used to get data
+def parseJSON (infile,timelinewriter,filtername):
+	global wp
+	print("parsing tshark json to timeline for " + filtername)
+	start_time = time.time()
+	if filtername == "smb_filter" or filtername == "smb2_filter":
+				
+		try:
+			fp = open(infile,'r',encoding='utf-8')
+			packets = json.load(fp,object_pairs_hook=aodk)
+			#packets are in order of their appearance in the json file. This order represents the occurrence in the pcap aka ordered by frame.number
+			# in case of any sorting problems the following line sorts the packets based on frame.number
+			#packets.sort(key= lambda x:int(x['_source']['layers']['frame']['frame.number']))
+			##for DEBUUGING: check sorting and exit
+			##for pkt in packets:
+			##	print(pkt['_source']['layers']['frame']['frame.number'])
+			##exit(0)
+			
+			#packets = json.load(fp,object_pairs_hook=aodk)
+			for pkt in packets:
+				# each pkt is a dict containing the packet, if duplicate entries are present (like multiple smb commands) they are stored as list (see method aodk)
+				# we need to check if the smb section is a list or a dict
+				# check for smb2:
+				if ('smb2' in pkt.get('_source').get('layers')):
+					if isinstance(pkt.get('_source').get('layers').get('smb2'),list):
+						#multiple smb commands because smb2 is of type list, we need to get get the list from the dict, loop over all entries and put a single entry back into the pkt object and call handle packet
+						# removes the smb command list from packet dict
+						smbcmd_list = pkt.get('_source').get('layers').pop('smb2')
+						# loop over smbcmd_list entries and set one single entry (smb cmd + header) at key "smb2" and call handle packet
+						# for every entry in smbcmd_list the handle packet function will be called. 
+						for smbc in smbcmd_list:
+							pkt.get('_source').get('layers').__setitem__('smb2',smbc)
+							# DEBUG
+							#print(type(pkt.get('_source').get('layers').get('smb2')))
+							#print(pkt.get('_source').get('layers').get('smb2').keys())
+							#print(pkt.get('_source').get('layers').get('frame').get('frame.number'))
+							handle_packet(pkt,filtername,timelinewriter)
+							del pkt.get('_source').get('layers')['smb2'] # clean for next entry in the loop
+					else:
+						handle_packet(pkt,filtername,timelinewriter)
+				# check for smb1:
+				elif ('smb' in pkt.get('_source').get('layers')):
+					if isinstance(pkt.get('_source').get('layers').get('smb'),list):
+						#multiple smb commands because smb is of type list, we need to get get the list from the dict, loop over all entries and put a single entry back into the pkt object and call handle packet
+						# removes the list from packet dict
+						smbcmd_list = pkt.get('_source').get('layers').pop('smb')
+						# loop over smbcmd_list entries and set one single entry (smb cmd + header) at key "smb" and call handle packet
+						for smbc in smbcmd_list:
+							pkt.get('_source').get('layers').__setitem__('smb',smbc)
+							handle_packet(pkt,filtername,timelinewriter)
+							del pkt.get('_source').get('layers')['smb'] # clean for next entry in the loop
+					else:
+						handle_packet(pkt,filtername,timelinewriter)
+				else:
+					# nothing to do should not be the case.
+					print("Error unable to determine smb type of packet")
+					print("frame number:" + pkt.get('_source',{}).get('layers',{}).get('frame',{}).get('frame.number', ''))
+					exit(1)
+
+		except Exception as e:
+			print ("error parsing json input file " + infile + " , make sure it is formatted correctly")
+			print(e)	
+			print(traceback.format_exc())
+	else:
+		print("Unknown filter_name in normalizeCSV function")
+		print("Exiting without cleanup")
+		exit(1)
+	stop_time = time.time()
+	elapsed = stop_time - start_time
+	h = int(elapsed//3600)
+	m = int((elapsed%3600) // 60)
+	s = int((elapsed%3600)%60)
+	temp_durations = "total time: %d:%d:%d (hh:mm:ss)" %(h,m,s)
+	print(temp_durations)
+	if wp:
+		writetoprotocol('\n##################################### parseJSON #####################################\n')
+		writetoprotocol('\n############################ ' + temp_durations + ' ############################\n')
+		
+
+#
+# function to create a dict containing framenumber and wireshark info field
+# Parameter infile: pcap
+# Return: dict containing frame.number and wireshark's info field
+def createInfoFieldDict (infile):
+	from collections import OrderedDict
+	global wp
+	print("Generating tmp wireshark info column dict")
+	start_time = time.time()
+	infofieldDict = {}
+	command = ['tshark', '-n', '-r', infile , '-E', 'separator=,', '-E', 'quote=d', '-T', 'fields', '-e', 'frame.number', '-e', '_ws.col.Info']  # the shell command
+	process2 = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	while True:
+		line = process2.stdout.readline().decode('UTF-8')
+		if line != '':
+			# splint line on first occurance of , into frame.number as key and info cloumn as valuse
+			list_line = line.split(',',1)
+			# remove starting and trailing " from key
+			key = list_line[0][+1:-1]
+			# remove starting and trailing "linefeed from key
+			infofieldDict[key] = list_line[1][+1:-2]
+		else:
+			break
+	stop_time = time.time()
+	elapsed = stop_time - start_time
+	h = int(elapsed//3600)
+	m = int((elapsed%3600) // 60)
+	s = int((elapsed%3600)%60)
+	temp_durations = "total time: %d:%d:%d (hh:mm:ss)" %(h,m,s)
+	print(temp_durations)
+	if wp:
+		writetoprotocol('\n########################### create wireshark info colomn ###########################\n')
+		writetoprotocol('\n_ws.col.Info Field will be matched by frame.number and added to timeline \n')
+		writetoprotocol('\n############################ ' + temp_durations + ' ############################\n')
+
+	return infofieldDict
+
+#
+# function handles on parsed packet (dict) from json output and writes up to n rows to timeline csv file
+# Parameter packet: the packet dict object
+# Parameter filtername: current running filter
+# Parameter timelinewriter: csv writer object, will be used to write parsed rows into timeline
+def handle_packet(packet,filtername,timelinewriter):
+	global wp
+	global wsInfoColumn
+	global wsInfoColumnDict
+	# for each packet we initialize the row object, no values left from previous packet (execpt via specific *_dicts (like user_dict etc.)
+	row = {}
+	
+	smbv = 1
+	# get packet data 
+	p = packet.get('_source','')
+	# get frame dict
+	pf = p.get('layers',{}).get('frame','')
+	# get ip dict
+	pi = p.get('layers',{}).get('ip','')
+	# get ethernet dict
+	pe = p.get('layers',{}).get('eth','')
+	# get transport (tcp or udp dict)
+	## get protocol (tcp/udp) dict
+	if('tcp'in p['layers']):
+		pp = p['layers']['tcp']
+	elif('udp'in p['layers']):
+		pp = p['layers']['udp']
+	else:
+		pp = {}
+		if wp:
+			writetoprotocol('unable to determine transport protocol for packet: ' + pf.get('frame.number','') + ' setting empty source and destination port')
+
+	# get smb or smb2 dict
+	if('smb2' in p['layers']):
+		#smb version 2 or3
+		smbv = 2
+		# ps object is normal dict if no duplicate entries (multiple smb commands per packet) were found while parsing.
+		# if multiple commands where present, it is a list object!
+		ps = p['layers']['smb2']
+	if('smb' in p['layers']):
+		smbv = 1
+		ps = p['layers']['smb']
+		
+	#set data in row dict
+	row['frame.number'] = pf.get('frame.number', '')
+	tmp_time = pf.get('frame.time_epoch','')
+	if(len(tmp_time) > 0):
+		tmp_datetime = datetime.datetime.utcfromtimestamp(float(pf['frame.time_epoch']))
+		row['frame.date_epoch'] = tmp_datetime.strftime('%Y-%m-%d')
+		row['frame.time_epoch'] = tmp_datetime.strftime('%H:%M:%S.%f')
+	else:
+		row['frame.date_epoch'] = ''
+		row['frame.time_epoch'] = ''
+	
+	row['eth.src'] = pe.get('eth.src','')
+	row['eth.dst'] = pe.get('eth.dst','')
+	
+	row['timezone'] = 'UTC'
+	row['ip.src'] = pi.get('ip.src','')
+	row['ip.dst'] = pi.get('ip.dst','')
+	# either tcp or udp.*port will return nothing
+	row['srcport'] = pp.get('tcp.srcport','') + pp.get('udp.srcport','')
+	row['dstport'] = pp.get('tcp.dstport','') + pp.get('udp.dstport','')
+	row['tcp.stream'] = pp.get('tcp.stream','')
+	
+	if wsInfoColumn:
+		row['_ws.col.Info'] = wsInfoColumnDict.get(row['frame.number'],'')
+	
+	# End dealing with data which is related to the packet independent of potentially multiple smb commands per packet
+	
+	##### FIXME: doublecheck if this should be in the loop for smb commands
+	
+	# deal with winreg, 
+	if('winreg' in p['layers']):
+		# new row object per packet, keys will not contain values from packet before
+		row['winreg.opnum'] = p.get('layers',{}).get('winreg',{}).get('winreg.opnum','')
+		#loop needed
+		for winreg_key,winreg_val in p.get('layers',{}).get('winreg','').items(): 
+			if 'Keyname:' in winreg_key:
+				for t_winreg_key,t_winreg_val in winreg_val.items():
+					if 'Keyname:' in t_winreg_key:
+						row['winreg.winreg_OpenKey.keyname'] = t_winreg_val.get('winreg.winreg_OpenKey.keyname','')
+			if 'Name:' in winreg_key:
+				for t_winreg_key,t_winreg_val in winreg_val.items():
+					if 'Name:' in t_winreg_key:
+						row['winreg.winreg_CreateKey.name'] = t_winreg_val.get('winreg.winreg_CreateKey.name','') # -> in Wireshark sample
+						row['winreg.winreg_SetValue.name'] = t_winreg_val.get('winreg.winreg_SetValue.name','') # -> in wireshark sample
+			if 'Value:' in winreg_key:
+				for t_winreg_key,t_winreg_val in winreg_val.items():
+					if 'Value:' in t_winreg_key:
+						row['winreg.winreg_DeleteValue.value'] = t_winreg_val.get('winreg.winreg_DeleteValue.value','') # -> in Wireshark sample
+			if 'Key:' in winreg_key:
+				for t_winreg_key,t_winreg_val in winreg_val.items():
+					if 'Key:' in t_winreg_key:
+						row['winreg.winreg_DeleteKey.key'] = t_winreg_cal.get('winreg.winreg_DeleteKey.key','') # -> in Wireshark sample
+			if 'Pointer to Value Name' in winreg_key:
+				for t_winreg_key,t_winreg_val in winreg_val.items():
+					if 'Value Name:' in t_winreg_key:
+						for tt_winreg_key,tt_winreg_val in t_winreg_val.items():
+							if 'Value Name' in tt_winreg_key:
+								row['winreg.winreg_QueryValue.value_name'] = tt_winreg_val.get('winreg.winreg_QueryValue.value_name','') # -> smb.json
+		
+		
+		# FIXME: no sample currently, if found set the corresponding value in row from packet, rest will be done in enrich opnum
+		#row['winreg.QueryMultipleValue.ve_valuename'] = ''
+		#row['winreg.winreg_LoadKey.keyname'] = ''
+		#row['winreg.winreg_EnumKey.name'] = '' -> # in wireshark sample but no name...
+		#row['winreg.winreg_EnumValue.name'] = '' # -> in wireshark sample but no name
+		
+	# deal with svcctl, 
+	if('svcctl' in p['layers']):
+		row['svcctl.opnum'] = p.get('layers',{}).get('svcctl',{}).get('svcctl.opnum','')
+		# loop needed to extract displayname and servicename
+		for svcctl_key,svcctl_val in p.get('layers',{}).get('svcctl','').items():
+			if 'Service Name:' in svcctl_key:
+				row['svcctl.servicename'] = svcctl_val.get('svcctl.servicename','')
+			if 'Display Name:' in svcctl_key:
+				row['svcctl.displayname'] = svcctl_val.get('svcctl.displayname','')
+
+	# deal with atsvc
+	if('atsvc' in p['layers']):
+		row['atsvc.opnum'] = p.get('layers',{}).get('atsvc',{}).get('atsvc.opnum','')
+		# jobInfo.command
+		for atsvc_key,atsvc_val in p.get('layers',{}).get('atsvc','').items():
+			if 'Pointer to Job Info' in atsvc_key:
+				for t_atsvc_key,t_atsvc_val in atsvc_val.items():
+					if 'Pointer to Command' in t_atsvc_key:
+						row['atsvc.atsvc_JobInfo.command'] = t_atsvc_val.get('atsvc.atsvc_JobInfo.command','')
+
+	# deal with srvsvc
+	if('srvsvc' in p['layers']):
+		row['srvsvc.opnum'] = p.get('layers',{}).get('srvsvc',{}).get('srvsvc.opnum','')
+		netshareInfo2 = p.get('layers',{}).get('srvsvc',{}).get('srvsvc_NetShareInfo',{}).get('Pointer to Info2 (srvsvc_NetShareInfo2)',{}).get('srvsvc.srvsvc_NetShareInfo.info2',{})
+		for t_netshareInfo2_key,t_netshareInfo2_val in netshareInfo2.items():
+			if 'Pointer to Name' in t_netshareInfo2_key:
+				row['srvsvc.srvsvc_NetShareInfo2.name'] = t_netshareInfo2_val.get('srvsvc.srvsvc_NetShareInfo2.name','')
+			if 'Pointer to Path' in t_netshareInfo2_key:
+				row['srvsvc.srvsvc_NetShareInfo2.path'] = t_netshareInfo2_val.get('srvsvc.srvsvc_NetShareInfo2.path','')
+		row['srvsvc.srvsvc_NetShareDel.share_name'] = p.get('layers',{}).get('srvsvc',{}).get('srvsvc.srvsvc_NetShareDel.share_name', '')
+		
+		
+		
+	# deal with wkssvc
+	if('wkssvc' in p['layers']):
+		row['wkssvc.opnum'] = p.get('layers',{}).get('wkssvc',{}).get('wkssvc.opnum','')
+		
+	# deal with lsarpc
+	if('lsarpc' in p['layers']):
+		row['lsarpc.opnum'] = p.get('layers',{}).get('lsarpc',{}).get('lsarpc.opnum','')
+		
+	# deal with samr
+	if('samr' in p['layers']):
+		row['samr.opnum'] = p.get('layers',{}).get('samr',{}).get('samr.opnum','')
+		
+				
+	##### END FIXME: doublecheck if this should be in the loop for smb commands
+		
+		
+	# START dealing with smb specific data 
+	
+# if a packet carries more than 1 smb comment, it contains the corresponding amounts of header and smb command json entries. example: 2 smb commands -> {header1};{smb command1};{header2};{smb_sommand2}
+
+	if(smbv == 1):
+		# get header by name, header will be removed, so it does no longer need to be considered within the loop
+		ps_header = ps.pop('SMB Header')
+		# get values from header	
+		# take 'smb.mid','smb.uid','smb.pid','smb.tid','smb.fid', from header
+		row['smb.cmd'] = ps_header.get('smb.cmd','')
+		row['smb_action'] = smb_cmd_dict.get(format(int(row['smb.cmd']),'#04x'),'Error parsing smb command')	
+		row['smb.mid'] = ps_header.get('smb.mid','')
+		row['smb.uid'] = ps_header.get('smb.uid','')
+		row['smb.pid'] = ps_header.get('smb.pid','')
+		row['smb.tid'] = ps_header.get('smb.tid','')
+		# smb.tid_tree can contain empty string, need to test before
+		if len(ps_header.get('smb.tid_tree','')) > 0:
+			row['smb.path'] = ps_header.get('smb.tid_tree','').get('smb.path','')
+		row['account'] = ps_header.get('smb2.sesid_tree',{}).get('smb2.acct','')
+		row['smb.response_to'] = ps_header.get('smb.response_to','') 
+		if len(row['smb.response_to']) > 0:
+			row['status'] = "Response"
+		else:
+			row['status']  = "Request"
+		
+		#deal with smb_pipe 
+		if('smb_pipe' in p['layers']):
+			t_pipe = p.get('layers',{}).get('smb_pipe',{})
+			if isinstance(t_pipe,dict):
+				# smb_pipe can also be an empty string with will case an error as string object has no get Method...
+				row['smb.file'] = t_pipe.get('smb.fid_tree',{}).get('smb.file','')
+		
+		for ps_entry_name, ps_entry in ps.items():
+			# ps just carries stuff included in the smb part, header already processed and removed
+			# non header entries -> values taken from header still are present in row object
+			
+			tmp_trans2_cmd = ''
+			tmp_trans2_actionList = []
+			tmp_trans2_cmd = ps_entry.get('smb.trans2.cmd','')
+			# use tmp_trans2_cmd in smbtimeline field, if it is a smb_trans2 request
+			if format(int(row['smb.cmd']),'#04x') == '0x32' and len(tmp_trans2_cmd) > 0:
+				tmp_trans2_actionList = smb_trans2_subcmd_dict.get(format(int(tmp_trans2_cmd),'#06x'),format(int(tmp_trans2_cmd),'#06x')).split(':')
+				if len(tmp_trans2_actionList) > 1:
+					row['info'] = row.get('info','') + ' ' + tmp_trans2_actionList[1]
+				row['smb_action'] = row['smb_action'] + ' ' + tmp_trans2_actionList[0]
+			
+			if len(row.get('smb.file',''))==0:
+				row['smb.file'] = setsmbfilename(ps_entry,row)
+			row['smb.create.action'] = create_action_dict.get(ps_entry.get('smb.create.action',''),'')
+			row['smb.fid'] = ps_entry.get('smb.fid','')
+			row['account'] = ps_entry.get('smb.account','')
+			if len(ps_entry.get('smb.path','')) > 0:
+				# if no sm.path is given, we do not want to overwrite if already set within the header
+				row['smb.path'] = ps_entry.get('smb.path','')
+			
+			row['smb.search_pattern'] = ps_entry.get('FIND_FIRST2 Parameters',{}).get('smb.search_pattern','') + ps_entry.get('smb.search_pattern','')
+			#requestingHostname and domain
+			row['domain'] = ps_entry.get('smb.primary_domain','') + ps_entry.get('smb_netlogon',{}).get('smb_netlogon.domain_name','')
+			if len(row['domain']) == 0:
+				if isinstance(ps_entry.get('GET_DFS_REFERRAL Data',{}).get('Referrals',{}).get('Referral',{}),list):
+					# Referral is list.
+					for ri in ps_entry.get('GET_DFS_REFERRAL Data',{}).get('Referrals',{}).get('Referral',{}):
+						ri_domain_name = ri.get('smb_netlogon.domain_name','')
+						if len(ri_domain_name) >0:
+							row['domain'] = ri_domain_name
+							break
+				else:
+					row['domain'] = ps_entry.get('GET_DFS_REFERRAL Data',{}).get('Referrals',{}).get('Referral',{}).get('smb.dfs.referral.domain_name','')
+			if len(row['domain']) == 0:
+				row['domain'] = ps_entry.get('smb.security_blob_tree',{}).get('gss-api',{}).get('spnego',{}).get('spnego.negTokenInit_element',{}).get('ntlmssp',{}).get('ntlmssp.negotiate.domain','')
+			row['requestingHostname'] = ps_entry.get('browser',{}).get('browser.response_computer_name','')
+			# as of today only spnego.negTokenTarg_element seems to be interesting, other items containing ntlmssp: spnego.negTokenInit_element
+			tmp_ntlmssp = ps_entry.get('smb.security_blob_tree',{}).get('gss-api',{}).get('spnego',{}).get('spnego.negTokenTarg_element',{}).get('ntlmssp',{})
+			if len(row['requestingHostname']) == 0: 
+				row['requestingHostname'] = tmp_ntlmssp.get('ntlmssp.auth.hostname','')
+			if len(row['domain']) == 0:
+				row['domain'] = tmp_ntlmssp.get('ntlmssp.auth.domain','')
+			if len(row['account']) == 0:
+				row['account'] = tmp_ntlmssp.get('ntlmssp.auth.username','')
+			# probably just session setup, TODO: check weather it is only needed for session setup and response, if so add check.
+			for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in tmp_ntlmssp.get('ntlmssp.challenge.target_info',{}).items():
+				if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0 :
+					row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_computer_name','')
+				if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
+					row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_domain_name','')
+			for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in tmp_ntlmssp.get('ntlmssp.auth.ntresponse_tree',{}).get('ntlmssp.ntlmv2_response_tree',{}).items():
+				if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
+					row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_computer_name','')
+				if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
+					row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_domain_name','')			
+
+			if ps_entry_name == 'smb_netlogon':
+				if len(row['requestingHostname']) == 0:
+					row['requestingHostname'] = ps_entry.get('smb_netlogon.unicode_computer_name','')
+				if len(row['account']) == 0:
+					row['account'] = pw.entry.get('smb_netlogon.user_name','')
+					
+			#place account at index uid into user_dict,
+			# if so far the user account field is empty we try to find the uid in the user_dict
+			account = row.get('account','')
+			if len(account) > 0: 
+				if len(row.get('smb.uid','')) > 0:
+					user_dict[row['smb.uid']] = account
+			else:
+				if row.get('smb.uid','0') in user_dict.keys():
+					row['account'] = user_dict[row['smb.uid']]
+			
+			#place domain at index uid into domain_dict
+			# if so far the domain field is emtpy, we try to find the uid in the domain_dict
+			domain = row.get('domain','')
+			if len(domain) > 0:
+				if len(row.get('smb.uid','')) > 0:
+					domain_dict[row['smb.uid']] = domain
+			else:
+				if row.get('smb.uid','0') in domain_dict.keys():
+					row['domain'] = domain_dict[row['smb.uid']]
+			
+			enrich_opnum(row)
+			# ALWAYS AFTER setting smb.file from smb level, as Netshare needs to overwrite value!!!
+			srvsvc_Netshare(row,filtername)
+					
+##########################
+#			#this is the end for the packet and smb specifics.
+			timelinewriter.writerow(row)
+
+		#for loop ends here, code below this line is not included in for loop but still in elif for smbv == 1
+		
+	elif(smbv == 2):
+		# get header by name, header will be removed, so it does no longer need to be considered within the loop
+		#ps_header = ps['SMB2 Header']
+		ps_header = ps.pop('SMB2 Header')
+		# get values from header
+		row['smb2.cmd'] = ps_header.get('smb2.cmd','')
+		row['smb_action'] = smb2_cmd_dict.get(format(int(row['smb2.cmd']),'#04x'),'Error parsing smb command')
+		#row['smb.mid'] = ps_header.get('','')
+		#row['smb.uid'] = ps_header.get('','')
+		row['smb2.pid'] = ps_header.get('smb2.pid','')
+		row['smb2.tid'] = ps_header.get('smb2.tid','')
+		tmp_tid_tree = ps_header.get('smb2.tid_tree',{})
+		row['smb2.tree'] = tmp_tid_tree.get('smb2.tree','')
+		row['smb2.share_type'] = smb2_share_type_dict.get(tmp_tid_tree.get('smb2.share_type',''),'')
+		row['requestingHostname'] = tmp_tid_tree.get('smb2.host','')
+		row['domain'] = tmp_tid_tree.get('smb2.domain','')
+		row['account'] = tmp_tid_tree.get('smb2.acct','')
+		row['smb2.response_to'] = ps_header.get('smb2.response_to','')
+		row['smb2.sesid'] = ps_header.get('smb2.sesid','')
+		if len(row['smb2.response_to']) > 0:
+			row['status'] = "Response"
+		else:
+			row['status']  = "Request"
+		# done with a header enter loop
+		# in loop skip entry if header
+		# with the change to native json and and the clean up in parseJSON method this loop is no longer needed, but is does not break things, FIXME: remove loop FIXME: remove loop for smb1 as well
+		for ps_entry_name, ps_entry in ps.items():
+			# non header values taken from header are present in row object
+			# this is why this is not in an else and executed for every iteration, we accept that the header iteration always will overwrite the fields below.
+			# needs some time, but also initializes the values for the keys
+			row['smb2.filename'] = ps_entry.get('smb2.filename','')
+			# smb2.ioctl.in can also contain an empty string. strings does not have a .get method. we need to check content of smb2.ioctl.out first 
+			if len(ps_entry.get('smb2.ioctl.in',{})) > 0 and len(row['smb2.filename']) == 0:
+				row['smb2.filename'] = ps_entry.get('smb2.ioctl.in',{}).get('smb.file','')
+			if len(ps_entry.get('smb2.tree', '')) > 0:
+				row['smb2.tree'] = ps_entry.get('smb2.tree', '')
+			# smb.dfs.referral.path only seen in responses, in the corresponding request it is set as filename, that is why we also set it as filename for the response
+			if row.get('status','') == 'Response' and len(ps_entry.get('smb2.ioctl.out',{})) > 0 and len(row['smb2.filename']) == 0:
+				# we can we have multiple referrals
+				t_ref = ps_entry.get('smb2.ioctl.out',{}).get('Referrals',{}).get('Referral','')
+				if type(t_ref) is list:
+					for t_ref_a in t_ref:
+						if len(t_ref_a.get('smb.dfs.referral.path','')) > 0:
+							row['smb2.filename'] = t_ref_a.get('smb.dfs.referral.path','')
+							break
+				else:
+					if len(t_ref) > 0:
+						# t_ref can be empty string, not having a .get method, we need to check first.
+						row['smb2.filename'] = t_ref.get('smb.dfs.referral.path','')
+			if int(row['smb2.cmd']) == 14 and len(row.get('smb2.filename',''))==0:
+				#find Response, smb2.filename needs special treetment
+				#print(ps_entry.get('smb2.find.info_blob_tree',{}))
+				temp_id_both_info = ps_entry.get('smb2.find.info_blob_tree',{}).get('smb2.find.id_both_directory_info','')
+				if len(temp_id_both_info)>0:
+					if isinstance(temp_id_both_info,list):
+						#list
+						concat_filenames = []
+						for tr in temp_id_both_info:
+							if len(tr.get('smb2.filename',''))>0:
+								concat_filenames.append(tr.get('smb2.filename',''))
+						concat_filenames.sort()
+						row['smb2.filename'] = str(concat_filenames).strip('[]')
+					else:
+						#dict
+						row['smb2.filename'] = temp_id_both_info.get('smb2.filename','')
+				temp_full_dir_info = ps_entry.get('smb2.find.info_blob_tree',{}).get('smb2.find.full_directory_info','')
+				if len(temp_full_dir_info)>0 and len(row.get('smb2.filename',''))==0:
+					# if we set smb2.filename above, we do not overwrite here
+					if isinstance(temp_full_dir_info,list):
+						#list
+						concat_filenames = []
+						for tr in temp_full_dir_info:
+							if len(tr.get('smb2.filename',''))>0:
+								concat_filenames.append(tr.get('smb2.filename',''))
+						concat_filenames.sort()
+						row['smb2.filename'] = str(concat_filenames).strip('[]')
+					else:
+						#dict
+						row['smb2.filename'] = temp_full_dir_info.get('smb2.filename','')
+					
+			row['smb2.create.action'] = create_action_dict.get(ps_entry.get('smb2.create.action',''),'')
+			if len(row.get('smb2.share_type','')) == 0:
+				# can already be set by smb header
+				row['smb2.share_type'] = smb2_share_type_dict.get(ps_entry.get('smb2.share_type',''),'')
+			row['smb2.find.pattern'] = ps_entry.get('smb2.find.pattern','')
+			if len(row.get('domain','')) == 0:
+				# smb2.ioctl.out can also contain an empty string. strings does not have a .get method. we need to check content of smb2.ioctl.out first  
+				tmp_ioctl_out = ps_entry.get('smb2.ioctl.out',{})
+				if len(tmp_ioctl_out) > 0:
+					if isinstance(ps_entry.get('smb2.ioctl.out',{}).get('Referrals',{}).get('Referral',{}),list):
+						# Referral is list.
+						for ri in ps_entry.get('smb2.ioctl.out',{}).get('Referrals',{}).get('Referral',{}):
+							ri_domain_name = ri.get('smb.dfs.referral.domain_name','')
+							if len(ri_domain_name) >0:
+								row['domain'] = ri_domain_name
+								break
+					else:
+						row['domain'] = ps_entry.get('smb2.ioctl.out',{}).get('Referrals',{}).get('Referral',{}).get('smb.dfs.referral.domain_name','')
+			if len(row.get('domain','')) == 0:
+				row['domain'] = ps_entry.get('smb2.security_blob_tree',{}).get('gss-api',{}).get('spnego',{}).get('spnego.negTokenInit_element',{}).get('ntlmssp',{}).get('ntlmssp.negotiate.domain','')
+			if ps_entry_name == 'rpc_netlogon':
+				if len(row.get('domain','') == 0):
+					tmp_rpc_controller_info = ps_entry.get('rpc_netlogon',{}).get('DOMAIN_CONTROLLER_INFO',{})
+					for tmp_rcp_ci_entry_name,rmp_rcp_ci_entry in tmp_rpc_controller_info.items() :
+						if 'Logon Domain:' in tmp_rcp_ci_entry_name:
+							row['domain'] = tmp_tcp_ci_entry.get('netlogon.domain','')
+			
+			# as of today only snego.negTokenTarg_element seems to be intersting, other items containing ntlmssp: spnego.negTokenInit_element
+			tmp_ntlmssp = ps_entry.get('smb2.security_blob_tree',{}).get('gss-api',{}).get('spnego',{}).get('spnego.negTokenTarg_element',{}).get('ntlmssp',{})
+			if len(row.get('requestingHostname','')) == 0:
+				row['requestingHostname'] = tmp_ntlmssp.get('ntlmssp.auth.hostname','')
+			if len(row.get('domain','')) == 0:
+				row['domain'] = tmp_ntlmssp.get('ntlmssp.auth.domain','')
+			if len(row.get('account','')) == 0:
+				row['account'] = tmp_ntlmssp.get('ntlmssp.auth.username','')
+			# probably just session setup, TODO: check weather it is only needed for session setup and response, if so add check.
+			for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in tmp_ntlmssp.get('ntlmssp.challenge.target_info',{}).items():
+				if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
+					row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_computer_name','')
+				if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
+					row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_domain_name','')
+			for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in tmp_ntlmssp.get('ntlmssp.auth.ntresponse_tree',{}).get('ntlmssp.ntlmv2_response_tree',{}).items():
+				if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
+					row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_computer_name','')
+				if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
+					row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_domain_name','')
+					
+			#get smb2.fid from guid handle entriesFile:*
+			for k,v in ps_entry.items():
+				if 'GUID handle File:' in k:
+					row['smb2.fid'] = v.get('smb2.fid','')
+				#only if GUID handle File not present	
+				elif k == 'GUID handle':
+					row['smb2.fid'] = v.get('smb2.fid','')
+				else:
+					#do nothing
+					continue
+			if len(row.get('smb2.fid','')) == 0:
+				tt_fid = ps_entry.get('smb2.create.extrainfo',{})
+				#sometimes an empty string is returned
+				if len(tt_fid)>0:
+					for k,v in tt_fid.items():
+						if 'SMB2_CREATE_DURABLE_HANDLE_REQUEST' in k:
+							row['smb2.fid'] = v.get('smb2.create.chain_data',{}).get('GUID handle',{}).get('smb2.fid','')
+			sub_proto = False
+			
+			# place account at index sesid into user_dict,
+			# if so far the user account field is empty we try to find the sesid in the user_dict
+			account = row.get('account','')
+			if len(account) > 0:
+				if len(row.get('smb2.sesid','')) > 0:
+					user_dict[row['smb2.sesid']] = account
+			else:
+				if row.get('smb2.sesid','') in user_dict.keys():
+					row['account'] = user_dict[row['smb2.sesid']]
+			
+			# place domain at index sesid into domain_dict
+			# if so far the domain field is emtpy, we try to find the sesid in the domain_dict
+			domain = row.get('domain','')
+			if len(domain) > 0:
+				if len(row.get('smb2.sesid','')) > 0:
+					domain_dict[row['smb2.sesid']] = domain
+			else:
+				if row.get('smb2.sesid','') in domain_dict.keys():
+					row['domain'] = domain_dict[row['smb2.sesid']]
+
+			# place requestingHostname at index sesid into host_dict
+			# if so far the requestingHostname field is emtpy, we try to find the sesid in the host_dict
+			requestingHostname = row.get('requestingHostname','')
+			if len(requestingHostname) > 0: 
+				if len(row.get('smb2.sesid','')) > 0:
+					host_dict[row['smb2.sesid']] = requestingHostname
+			else:
+				if row.get('smb2.sesid','') in host_dict.keys():
+					row['requestingHostname'] = host_dict[row['smb2.sesid']]
+					
+			row = smb2setfilename(row)
+			enrich_opnum(row)
+
+
+			# deal with 'smb2.ioctl.function' only do this if non of the carried sub-protocols are already given more specific infos
+			tmp_smb2_ioctl_function = ps_entry.get('smb2.ioctl.function','')
+			if len(tmp_smb2_ioctl_function) > 0 and sub_proto == False :
+				tmp_smb2_ioctl_function = format(int(tmp_smb2_ioctl_function),'#010x')
+				ioctl_ext = smb2_ioctl_function_dict.get(tmp_smb2_ioctl_function,'')
+				if len(ioctl_ext):
+					# found something to extend
+					row['smb_action'] = row.get('smb_action','') + ' ' + smb2_ioctl_function_dict.get(tmp_smb2_ioctl_function).split(':')[0]
+					row['info'] = row.get('info','') + ' ' + smb2_ioctl_function_dict.get(tmp_smb2_ioctl_function).split(':')[1]
+				else:
+					# found nothing to extend
+					row['smb_action'] = row['smb_action'] + ' unknown IOCTL function code: ' + tmp_smb2_ioctl_function
+
+			# ALWAYS AFTER calling smb2setfilename, as Netshare needs to overwrite value!!!
+			srvsvc_Netshare(row,filtername)
+
+##########################
+#			#this is the end for the packet and smb specifics.
+			timelinewriter.writerow(row)
+		#for loop ends here, code below this line is not included in for loop but still in elif for smbv == 2
+	
+	# if we reach this point, smbv is neither 1 nor 2
+	else:
+		print('DEBUG,UNKNOWN SMB VERSION... TODO how to handle')
+######################################3
+#	# we are done with the packet and all smd subcommands
+		
+
+# function to set smb.filename in row
+# Parameter ps_entry: json to extract filename from
+# Parameter row: dict of current row
+# Return: filename
+def setsmbfilename(ps_entry,row):
+	r_filename = ''
+	r_filename = ps_entry.get('smb.file','') + ps_entry.get('GET_DFS_REFERRAL Parameters',{}).get('smb.file','')
+	# smb.dfs.referral.path only seen in responses, in the corresponding request it is set as filename, that is why we also set it as filename for the response
+	if row.get('status','') == 'Response' and len(ps_entry.get('GET_DFS_REFERRAL Data',{})) > 0 and len(r_filename) == 0:
+	# we can we have multiple referrals
+		t_ref = ps_entry.get('GET_DFS_REFERRAL Data',{}).get('Referrals',{}).get('Referral','')
+		if type(t_ref) is list:
+			for t_ref_a in t_ref:
+				if len(t_ref_a.get('smb.dfs.referral.path','')) > 0:
+					r_filename = t_ref_a.get('smb.dfs.referral.path','')
+					break
+		else:
+			if len(t_ref) > 0:
+				# t_ref can be empty string, not having a .get method, we need to check first.
+				r_filename = t_ref.get('smb.dfs.referral.path','')
+	if len(r_filename) == 0:
+		for k,v in ps_entry.items():
+			if 'QUERY_PATH' in k:
+				r_filename = v.get('smb.file','')
+			elif 'QUERY_FILE_INFO' in k or 'SET_FILE_INFO' in k and len(r_filename) == 0: 
+				r_filename = v.get('smb.fid_tree',{}).get('smb.file','')
+			elif 'FIND_FIRST2 Data' in k and len(r_filename) == 0:
+				# loop needed for find file both
+				#f = True
+				concat_filenames = []
+				for kk,vv in v.items():
+					if 'Find File' in kk:
+						if len(vv.get('smb.file',''))>0:
+							concat_filenames.append(vv.get('smb.file',''))
+				concat_filenames.sort()
+				r_filename = str(concat_filenames).strip('[]')
+			elif 'FIND_NEXT2 Parameters' in k and len(r_filename) == 0:
+				r_filename = v.get('smb.file','')
+			elif 'FIND_NEXT2 Data' in k and len(r_filename) == 0:
+				# loop needed
+				#f = True
+				concat_filenames = []
+				for kk,vv in v.items():
+					if 'Find File' in kk:
+						if len(vv.get('smb.file',''))>0:
+							concat_filenames.append(vv.get('smb.file',''))
+				concat_filenames.sort()
+				r_filename = str(concat_filenames).strip('[]')	
+			else:
+				continue 
+	if len(r_filename) == 0:
+		r_filename = ps_entry.get('smb.fid_tree',{}).get('smb.file','')
+		
+	# deal with smb.dir_name if set, usually only in 0x10 and 0x01 requests
+	# as the directory name in the corresponding response is put into smb.file, do it same way for the request 
+	directory = ps_entry.get('smb.dir_name','')
+	if len(directory) > 0 and len(r_filename)==0:
+		if format(int(row['smb.cmd']),'#04x') == '0x01' or format(int(row['smb.cmd']),'#04x') == '0x10':
+			r_filename = directory
+	
+	
+	return r_filename
+	
+#
+# deprecated function, csv is replace by json		
 # function to parse temp csv file and write it to normalized csv output file
 # Parameter infile: the filepath where csv input will be read from
 # Parameter timelinewriter: csv Dictwriter object to write output to
 # Parameter filtername: will be added to csv to help identify filter used to get data
 #
 def normalizeCSV (infile,timelinewriter,filtername):
-	print("parsing thsark output to timeline for " + filtername)
+	global wp
+	print("parsing tshark output to timeline for " + filtername)
+	start_time = time.time()
 	try:
 		with open(infile,'r') as csvfile:
 			dataDict = csv.DictReader(csvfile, delimiter=',', quotechar='\"',)
@@ -864,7 +1661,19 @@ def normalizeCSV (infile,timelinewriter,filtername):
 						
 	except Exception as e:
 		print ("error parsing csv input file " + infile + " , make sure it is formatted correctly")
-		print(e)	
+		print(e)
+		print(traceback.format_exc())
+		
+	stop_time = time.time()
+	elapsed = stop_time - start_time
+	h = int(elapsed//3600)
+	m = int((elapsed%3600) // 60)
+	s = int((elapsed%3600)%60)
+	temp_durations = "total time: %d:%d:%d (hh:mm:ss)" %(h,m,s)
+	print(temp_durations)
+	if wp:
+		writetoprotocol('\n##################################### normalizeCSV #####################################\n')
+		writetoprotocol('\n############################ ' + temp_durations + ' ############################\n')
 
 
 # method tries to write a catalog of filenames seen in smb2 traffic an enrich packets not carrying smb2.filename attribute in the export with the corresponding filename
@@ -880,7 +1689,8 @@ def smb2setfilename (row):
 	request_frameID = row.get('smb2.response_to','')
 	# if packet has filename, store it in fname_packet_dict, key is the current packet id
 	#request_frameID = row.pop('smb2.response_to',None)
-	fname = row['smb2.filename']
+	#fname = row['smb2.filename']
+	fname = row.get('smb2.filename','')
 	if len(fname) > 0:
 	# if a filename exist, it exist in the request packet, we save the filename to a dict with the frame.number of the request as key
 		fname_packet_dict[row['frame.number']] = fname
@@ -892,20 +1702,21 @@ def smb2setfilename (row):
 	# fill packet to fid dict, to solve read request with fid where filename is not in fname_packet_dict, as read reply is response to (smb2.response_to) read request only haveing an existing fid 
 		packet_to_fid_dict[row['frame.number']] = fid
 						
-	# if the packet is a reply (request_frameID is filled AND the the ID is in the fname_packet_dict we can set the filename from the fname_packet_dict 
+	# if the packet is a reply (request_frameID is filled AND the ID is in the fname_packet_dict we can set the filename from the fname_packet_dict 
 	# AND the response carries the FID( file id), which we use to store the filename in the 
-	if request_frameID in fname_packet_dict:
+	if request_frameID in fname_packet_dict and len(row.get('smb2.filename',''))==0:
 		row['smb2.filename'] = fname_packet_dict[request_frameID]
-		fname_fid_dict[row['smb2.fid']] = fname_packet_dict[request_frameID]
+		if len(fid) > 0:
+			fname_fid_dict[row['smb2.fid']] = fname_packet_dict[request_frameID]
 							
 	else:
 	# check if the packet contains a fid and if we already have it stored in the fname_fid_dict, if so we set the filename from the fname_fid_dict
 		fid = row.get('smb2.fid', '')
-		if len(fid) > 0 and row['smb2.fid'] in fname_fid_dict:
+		if len(fid) > 0 and row['smb2.fid'] in fname_fid_dict and len(row.get('smb2.filename',''))==0:
 			row['smb2.filename'] = fname_fid_dict[row['smb2.fid']]
 		else:
 			#check if we find something in packet_to_fid via smb2.resonse_to in packet_to_fid and use the result to check if we have a filename in fname_fid_dict
-			if request_frameID in packet_to_fid_dict:
+			if request_frameID in packet_to_fid_dict and len(row.get('smb2.filename',''))==0:
 				fid = packet_to_fid_dict[request_frameID]
 				# there are cases were fid is present but we do not have a filename, so better avoid exceptions and errors and use get with default empty
 				row['smb2.filename'] = fname_fid_dict.get(fid,'')
@@ -964,6 +1775,8 @@ def enrich_opnum(row):
 		tmp_winregValue = row.get('winreg.winreg_EnumValue.name','')
 	if tmp_winreg == '29':
 		tmp_winregValue = row.get('winreg.QueryMultipleValue.ve_valuename','')
+	if tmp_winreg == '7' or '35':
+		tmp_winregValue = row.get('winreg.winreg_DeleteKey.key','')
 	#remove fields from row, value will be stored somewhere else, if they are not removed, they will break later parsing
 	row.pop('winreg.winreg_OpenKey.keyname','')
 	row.pop('winreg.winreg_CreateKey.name','')
@@ -974,6 +1787,7 @@ def enrich_opnum(row):
 	row.pop('winreg.winreg_EnumKey.name','')
 	row.pop('winreg.winreg_EnumValue.name','')
 	row.pop('winreg.QueryMultipleValue.ve_valuename','')
+	row.pop('winreg.winreg_DeleteKey.key','')
 	if len(tmp_winregKey) > 0 or len(tmp_winregValue) > 0:
 		row['registry_info'] = 'Registry Key: ' + tmp_winregKey + ' Value: ' + tmp_winregValue
 		# set entry for enrichment of response
@@ -1120,7 +1934,6 @@ def extenedOutout_desc(info_field,user,domain,path,file,smb_create,smb_search,se
 # Paramter: smbV SMB Version, some command strings have different meanings in smb1 or in smb2/3 (1 -> SMB Version 1, 2 -> SMB Version 2 or 3)
 # Parameter: subproto_opnum, content of the filed subproto_opnum taken from row object. Used to define MACB for subprotocols
 # Return: MACB String
-
 def MACBString(smbCmd,smbCreateAction,smbV,subproto_opnum):
 	global wb
 	global create_action_dict
@@ -1275,14 +2088,17 @@ def MACBString(smbCmd,smbCreateAction,smbV,subproto_opnum):
 		if wp:
 			writetoprotocol('Error determining MACB String, setting default ----')
 			writetoprotocol(str(e))
+			print(traceback.format_exc())
 		return '....'
 	
 # function parses and writes log2timeline (axa extended output)
 # Parameter: l2toutput (path to log2timeline output target)
 # Parameter: smb1timeline (path to smb1 timeline as input, empty if smb1 timeline was not produced)
 # Parameter: smb2timeline (path to smb2/3 timeline as input, empty if smb2/3 timeline was not produced)
-def l2toutput(l2toutput_file,smb1timeline,smb2timeline):
+# Parameter: delimiterChar (-e option: ',' ; -b option: '|')
+def l2toutput(l2toutput_file,smb1timeline,smb2timeline,delimiterChar):
 	print("parsing timeline output to extended output file")
+	start_time = time.time()
 	global wp
 	global inputfile
 	l2tdict = defaultdict(list)
@@ -1290,6 +2106,11 @@ def l2toutput(l2toutput_file,smb1timeline,smb2timeline):
 	print("starting extended output")
 	if wp:
 		writetoprotocol('\n######################### log2timeline export ########################\n')
+		if delimiterChar == ",":
+			writetoprotocol('Output format: csv \n')
+		else:
+			#delimiter: |
+			writetoprotocol('Output format: body file \n')
 		writetoprotocol(l2toutput_file + '\n')
 		writetoprotocol('\n#####################################################################################\n')
 		
@@ -1297,11 +2118,13 @@ def l2toutput(l2toutput_file,smb1timeline,smb2timeline):
 		# create timeline write object
 		l2twriter = open(l2toutput_file,'w')
 		lt2Headerlist = ['date','time','timezone','MACB','source','sourcetype','type','user','host','short','desc','version','filename','inode','notes','format','extra']
-		l2twriter = csv.DictWriter(l2twriter, delimiter=',', quotechar='\"', fieldnames=lt2Headerlist)
+		l2twriter = csv.DictWriter(l2twriter, delimiter=delimiterChar, quotechar='\"', fieldnames=lt2Headerlist)
+		#l2twriter = csv.DictWriter(l2twriter, delimiter=',', quotechar='\"', fieldnames=lt2Headerlist)
 		l2twriter.writeheader()
 	except Exception as e:
 		print ('unable to open or write to specified extended output file ' + l2toutput_file + '\n')
 		print (e)
+		print(traceback.format_exc())
 
 	if len(smb1timeline) > 0:
 	# process smb1 timeline
@@ -1381,6 +2204,17 @@ def l2toutput(l2toutput_file,smb1timeline,smb2timeline):
 			#print(t_row)
 			# for each entry in list returned write to file
 			l2twriter.writerow(t_row)
+			
+	stop_time = time.time()
+	elapsed = stop_time - start_time
+	h = int(elapsed//3600)
+	m = int((elapsed%3600) // 60)
+	s = int((elapsed%3600)%60)
+	temp_durations = "total time: %d:%d:%d (hh:mm:ss)" %(h,m,s)
+	print(temp_durations)
+	if wp:
+		writetoprotocol('\n##################################### l2toutput #####################################\n')
+		writetoprotocol('\n############################ ' + temp_durations + ' ############################\n')
 		
 
 		
@@ -1388,8 +2222,8 @@ def l2toutput(l2toutput_file,smb1timeline,smb2timeline):
 #																			start some logic																			#
 #########################################################################################################################################################################
 try:
-	opts, args = getopt.getopt(sys.argv[1:],"12f:p:ho:e:sn",["smb1","smb2","file=","protocol=","help","outputdir=","extended=","strip","noclean"])
-
+	opts, args = getopt.getopt(sys.argv[1:],"12f:p:ho:e:sncdi",["smb1","smb2","file=","protocol=","help","outputdir=","extended=","strip","noclean","csv","deletestriped","infoColumn"])
+ 
 except getopt.GetoptError as err:
 	print(err)
 	usage()
@@ -1411,6 +2245,12 @@ for opt, arg in opts:
 		strip = True
 	elif opt in ("-n","--noclean"):
 		clean = False
+	elif opt in ("-c","--csv"):
+		use_json = False
+	elif opt in ("-d", "--deletestriped"):	
+		remove_striped = True
+	elif opt in ("-i", "--infoColumn"):
+		wsInfoColumn = True
 	elif opt in ("-h","--help"):
 		usage()
 		exit(0)
@@ -1418,6 +2258,7 @@ for opt, arg in opts:
 		usage()
 		assert False, "unknown option"
 
+		
 #IF no parameters given, except -f(--file) run default: smb2 and smb1 timeline, protocol yes, no quick filter, doing cleanup
 if len(opts) == 1:
 	if opts[0][0] == '-f' or opts[0][0] == '--file':
@@ -1462,6 +2303,9 @@ if strip:
 	checkdump()
 	inputfile = stripPCAP(inputfile)
 
+if wsInfoColumn:
+	wsInfoColumnDict = createInfoFieldDict(inputfile)
+
 
 if smb2:
 	# section for smb2
@@ -1470,16 +2314,35 @@ if smb2:
 	csvHeaderlist = ['frame.number','frame.date_epoch','frame.time_epoch','timezone','ip.src','ip.dst','srcport','dstport','smb_action','info','status','smb2.tree','smb2.filename','account','domain','smb2.find.pattern','requestingHostname','service_info','registry_info','smb2.share_type','smb2.create.action','_ws.col.Info','smb2.sesid' ,'smb2.pid' ,'smb2.tid' ,'smb2.fid','eth.src','eth.dst','smb2.cmd', 'tcp.stream', 'smb2.response_to', 'subProto_opnum']
 	timelinewriter = csv.DictWriter(csvwriter, delimiter=',', quotechar='\"', fieldnames=csvHeaderlist)
 	timelinewriter.writeheader()
-	tsharkfilter(inputfile,smb2_filter,"smb2_filter.csv","smb2_filter")
-	normalizeCSV ("smb2_filter.csv",timelinewriter,"smb2_filter")
+	if use_json: 
+		#using json output is selected
+		tsharkfilter_json(inputfile,smb2_filter,"smb2_filter.json","smb2_filter")
+		parseJSON ("smb2_filter.json",timelinewriter,"smb2_filter")
+	else:
+		# use deprecated csv method
+		tsharkfilter(inputfile,smb2_filter,"smb2_filter.csv","smb2_filter")
+		normalizeCSV ("smb2_filter.csv",timelinewriter,"smb2_filter")
+		if wp:
+			writetoprotocol('\n############################ SMB2/3 legacy csv mode used ############################\n')
+			writetoprotocol( 'with option -c --csv you have used a deprecated function.\n')
+			writetoprotocol('\n#####################################################################################\n')
 	csvwriter.close()
 	# clean up all smb2 tmp csv files
 	if clean:
-		os.remove('smb2_filter.csv')
-		if wp:
-			writetoprotocol('\n###################################### Clean up #####################################\n')
-			writetoprotocol( 'removed tmp file: smb2_filter.csv\n')
-			writetoprotocol('\n#####################################################################################\n')
+		if use_json:
+			#using json output is selected:
+			os.remove('smb2_filter.json')
+			if wp:
+				writetoprotocol('\n###################################### Clean up #####################################\n')
+				writetoprotocol( 'removed tmp file: smb2_filter.json\n')
+				writetoprotocol('\n#####################################################################################\n')
+		else:
+			#remove csv file
+			os.remove('smb2_filter.csv')
+			if wp:
+				writetoprotocol('\n###################################### Clean up #####################################\n')
+				writetoprotocol( 'removed tmp file: smb2_filter.csv\n')
+				writetoprotocol('\n#####################################################################################\n')
 
 if smb1:
 	# section for smb
@@ -1488,20 +2351,39 @@ if smb1:
 	csvHeaderlist = ['frame.number','frame.date_epoch','frame.time_epoch','timezone','ip.src','ip.dst','srcport','dstport','smb_action','info','status','smb.path','smb.file','account','domain','smb.search_pattern','requestingHostname','service_info','registry_info','smb.mid','smb.uid','smb.pid','smb.tid','smb.fid','smb.create.action','_ws.col.Info','eth.src','eth.dst','smb.cmd','tcp.stream', 'smb.response_to', 'subProto_opnum']
 	timelinewriter = csv.DictWriter(csvwriter, delimiter=',', quotechar='\"', fieldnames=csvHeaderlist)
 	timelinewriter.writeheader()
-	tsharkfilter(inputfile,smb_filter,"smb_filter.csv","smb_filter")
-	normalizeCSV ("smb_filter.csv",timelinewriter,"smb_filter")
+	if use_json:
+		#using json output is selected:
+		tsharkfilter_json(inputfile,smb_filter,"smb_filter.json","smb_filter")
+		parseJSON ("smb_filter.json",timelinewriter,"smb_filter")
+	else:
+		# use deprecated csv method
+		tsharkfilter(inputfile,smb_filter,"smb_filter.csv","smb_filter")
+		normalizeCSV ("smb_filter.csv",timelinewriter,"smb_filter")
+		if wp:
+			writetoprotocol('\n############################# SMB1 legacy csv mode used #############################\n')
+			writetoprotocol( 'with option -c --csv you have used a deprecated function.\n')
+			writetoprotocol('\n#####################################################################################\n')
 	csvwriter.close()
 	# clean up all smb tmp csv files
 	if clean:
-		os.remove('smb_filter.csv')
-		if wp:
-			writetoprotocol('\n###################################### Clean up #####################################\n')
-			writetoprotocol( 'removed tmp file: smb_filter.csv\n')
-			writetoprotocol('\n#####################################################################################\n')
+		if use_json:
+			#using json output is selected:
+			os.remove('smb_filter.json')
+			if wp:
+				writetoprotocol('\n###################################### Clean up #####################################\n')
+				writetoprotocol( 'removed tmp file: smb_filter.json\n')
+				writetoprotocol('\n#####################################################################################\n')
+		else:
+			#remove csv file
+			os.remove('smb_filter.csv')
+			if wp:
+				writetoprotocol('\n###################################### Clean up #####################################\n')
+				writetoprotocol( 'removed tmp file: smb_filter.csv\n')
+				writetoprotocol('\n#####################################################################################\n')
 
 if strip:
 	# clean stripped pcap, but only if inputfile !+ inputfile_o, as we do not want to delete the original file/evidence
-	if clean and inputfile != inputfile_o:
+	if clean and inputfile != inputfile_o and remove_striped:
 		os.remove(inputfile)	
 		if wp:
 			writetoprotocol('\n###################################### Clean up #####################################\n')
@@ -1517,8 +2399,8 @@ if len(l2toutput_file):
 	if smb2:
 		tmp_smb2_timelinefile = "timeline_smb2.csv"
 		
-	l2toutput(l2toutput_file,tmp_smb1_timelinefile,tmp_smb2_timelinefile)
-	
+	l2toutput(l2toutput_file,tmp_smb1_timelinefile,tmp_smb2_timelinefile,',')
+		
 #write smbtimeline limitations and further infos to protocol if protocol is enables
 if wp:
 	writetoprotocol('\n############################## smbtimeline intention ###############################\n')
@@ -1526,15 +2408,17 @@ if wp:
 	writetoprotocol('\n#####################################################################################\n')
 	writetoprotocol('\n##################### smbtimeline limitations and explanations ######################\n')
 	writetoprotocol('\nsmbtimeline depends on the parsing capabilities of wireshark/tshark. If wireshark/tshark is not capable of identifying and parsing traffic as smb, the traffic will also not be processed by smbtimeline.\n')
-	writetoprotocol('\nSMB traffic an carry one or more smb commands, if this is the case smbtimeline produces one entry into the timeline per smb command.\nIf data-fields in this case show up multiple times in the export of thsark, they have to be split between smb commands. This will be done in the order of appearance.\n\tExample: Packet contains 3 smb commands (a,b,c) and the export has there values (y,x,z) for the data-field "examplefield". \n\tResult:\n\ttimelinenr\tsmb command\texamplefield\n\t1\t\ta\t\ty\n\t2\t\tb\t\tx\n\t3\t\tc\t\tz\nIf a packet carries more than one smb command, but the data-field just carries one value it will be assigned to the first row, for the remaining rows a blank value will be used.')
+	writetoprotocol('\nONLY if deprecated csv output is used: SMB traffic an carry one or more smb commands, if this is the case smbtimeline produces one entry into the timeline per smb command.\nIf data-fields in this case show up multiple times in the export of tshark, they have to be split between smb commands. This will be done in the order of appearance.\n\tExample: Packet contains 3 smb commands (a,b,c) and the export has there values (y,x,z) for the data-field "examplefield". \n\tResult:\n\ttimelineNR\tsmb command\texamplefield\n\t1\t\ta\t\ty\n\t2\t\tb\t\tx\n\t3\t\tc\t\tz\nIf a packet carries more than one smb command, but the data-field just carries one value it will be assigned to the first row, for the remaining rows a blank value will be used.')
 	writetoprotocol('If SMB traffic contains srvsvc.NetShareInfo2.name,srvsvc.srvsvc_NetShareInfo2.path,srvsvc.srvsvc_NetShareDel.share_name: file & path and tree & filename (for smb2/3) will be overwritten with the aforementioned values.')
 	writetoprotocol('\nSMB Traffic can carry a sub-protocol in Remote Procedure Calls, like srvsvc or wkssvc. If a sub-protocol is addressed by smbtimeline, additional info will be added.')
 	writetoprotocol('\nCurrently addressed sub-protocols: samr,lsarpc,srvsvc,wkssvc,winreg,svcctl,atsvc')
 	writetoprotocol('\n\tNot all IOCTL ctlcodes will be decoded, if the code is missing in the extention dict, its ctlcode will be shown as hex.')
-	writetoprotocol('\n\twinreg protocoll ONLY SMB1: registrykey names are extracted from winreg.opnum in {15 6 13}, value names from winreg.opnum in {17 22 8} and stored in registry_info field')
+	writetoprotocol('\n\tONLY if deprecated csv output is used: winreg protocol ONLY SMB1: registrykey names are extracted from winreg.opnum in {15 6 13}, value names from winreg.opnum in {17 22 8} and stored in registry_info field')
+	writetoprotocol('\n\tCurrent mode for winreg protocol: Keys and Values are extracted where found.')
+	writetoprotocol('\n\tIt appears that some fields in the json output of tshark are not always at the same place in the json structure of a frame. It is possible that a field is missed, especially in deeper levels of the frames. If you find a situation where this is the case, please get in touch and provided a sample pcap.')
 	writetoprotocol('\nMACB String limitations:')
 	writetoprotocol('\n\tMACB Strings are not a perfect match for network protocols, for DCE/RPC aka sub-protocols it is even less of a match. Due to that sub-protocols just get "modification" (M...), "access" (.A..) and "brith" (...B) assigned.\n\tThe state "change", in regards of (file) metadata changes is not used.')
-	writetoprotocol('\n\tIn sub-protocols some of the open commands (which will get an .A..) will only show in their response if the request was successfull of not. No matter if the reqeust was successfull or not, they will get a .A.. .')
+	writetoprotocol('\n\tIn sub-protocols some of the open commands (which will get an .A..) will only show in their response if the request was successful of not. No matter if the request was successful or not, they will get a .A.. .')
 	writetoprotocol('\n#####################################################################################\n')
 	# extended output l2t enabled
 	if len(l2toutput_file):
