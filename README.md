@@ -15,7 +15,7 @@ Option | Explanation
 -s, --strip | strip traffic and create a new pcap only containing smb traffic, see code or protocol in regards to used bpf (filter). The resulting pcap file will not be deleted, frame.number values from timelines will not match the original pcap file if -s is used. If you want to lookup more details for frames, use the pcap "pcap_stripped_TIMESTAMP.pcap" (TIMESTAMP format: YearMonthDayHourMinute). In this file the frame.numbers will match with the timelines.
 -d, --deletestriped | If -s is given the stripped pcap will be deleted. This will not allow you to match frame.number from the timelines in the original pcap file.
 -n, --noclean | do not clean created tmp files, exception: tmp pcap file written by option -s.
--i, --infoColumn \n\tAdds the wireshark info column to the timeline. The info column is matched based on the frame.number.
+-i, --infoColumn | Adds the wireshark info column to the timeline. The info column is matched based on the frame.number.
 -c, --csv | Use csv output of tshark instead of json. This mode is deprecated since version 0.1000 and will no longer be updated.
 -h, --help | Prints usage info and exits.
 
