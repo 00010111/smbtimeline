@@ -67,7 +67,8 @@ python ./smbtimeline.py -f test.pcap
 
 ## Bugs, Discussions, Feature requests, contact
 * open an issue
-* contact me via twitter
+* contact me via Mastodon
+* (reaching out via Twitter doesn't really work well anymore...sorry)
 
 ## recorded talks about smbtimeline
 https://www.youtube.com/watch?v=g85W8FOu6oU
