@@ -56,8 +56,9 @@ python ./smbtimeline.py -f test.pcap
 * ONLY if deprecated csv output is used: Wireshark/TShark csv output has limitations in situations where multiple SMB/RPC commands are present which does not share the same parameters. In these situations double check the results within Wireshark/TShark in order to validate the correct assignment of the parameters. 
 
 ## Author
-* Twitter: [@b00010111](https://twitter.com/b00010111)
+* Mastodon: [@b00010111](https://ioc.exchange/@b00010111)
 * Blog: https://00010111.at/
+* Twitter: [@b00010111](https://twitter.com/b00010111)
 
 ## License
 * Free to use, reuse and redistribute for everyone.
@@ -72,6 +73,8 @@ python ./smbtimeline.py -f test.pcap
 https://www.youtube.com/watch?v=g85W8FOu6oU
 
 ## Change History
+ * Version 0.1001:
+	* Bug fix in handling smb2.ioctl.function, which have resulted in exception
  * Version 0.1000:
     * json output of tshark is now used to export data from pcap eliminating the past limitations regarding multiple SMB/RPC commands in a frame.
 	* csv output of tshark is now deprecated

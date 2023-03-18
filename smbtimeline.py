@@ -146,7 +146,6 @@ opnum_atsvc_b_list = [0]
 ### tshark -d tcp.port==8888,http Decodes tcp port 8888 as http traffic
 ## TODO: smb1
 ### smb.old_file -> filled when files are renamed.. new file name in smb.file => 0x07
-# TODO: check timesketch export https://github.com/google/timesketch/blob/master/docs/CreateTimelineFromJSONorCSV.md
 # TODO: samr traffic capture RID to names, for enrichment?
 # TODO: visualization
 # TODO: smb_pipe, use cases
@@ -187,7 +186,7 @@ except Exception as e:
 	exit(1)
 
 #version string
-smbtimelineversion = '0.1000'
+smbtimelineversion = '0.1001'
 
 # define os we are running on; if false we are running on Windows, else we are running Linux
 os_linux = True
@@ -1086,7 +1085,8 @@ def handle_packet(packet,filtername,timelinewriter):
 			# deal with 'smb2.ioctl.function' only do this if non of the carried sub-protocols are already given more specific infos
 			tmp_smb2_ioctl_function = ps_entry.get('smb2.ioctl.function','')
 			if len(tmp_smb2_ioctl_function) > 0 and sub_proto == False :
-				tmp_smb2_ioctl_function = format(int(tmp_smb2_ioctl_function),'#010x')
+				#Bugfix 18/03/2023 remove format and casting to int, not necessary
+				#tmp_smb2_ioctl_function = format(int(tmp_smb2_ioctl_function),'#010x')
 				ioctl_ext = smb2_ioctl_function_dict.get(tmp_smb2_ioctl_function,'')
 				if len(ioctl_ext):
 					# found something to extend
