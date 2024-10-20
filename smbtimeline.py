@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Author: twitter: @b00010111
+# Author: Mastodon: @b00010111 - https://ioc.exchange/@b00010111
 
 # windows: tshark needs to be in path: https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho
 # windows: get windump for -s parameter: https://www.winpcap.org/windump/install/default.htm
@@ -87,8 +87,8 @@ smb_atsvc_dict = {'0': 'NetrJobAdd : adds single AT task to task store','1': 'Ne
 # smb2.ioctl.function -> https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-smb2/5c03c9d6-15de-48a2-9835-8fb37f8a79d8 see ctlCode  guessing-> ioctl is like trans2
 # https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/efbfe127-73ad-4140-9967-ec6500e66d5e
 # don't use caps in keys for characters, they will not match!
-smb2_ioctl_function_dict = {'0x00060194':'FSCTL_DFS_GET_REFERRALS : request distributed file system referrals','0x0011400c':'FSCTL_PIPE_PEEK : requests server to copy named pipe\'s data into returned buffer (for preview) without removing it','0x00110018':'FSCTL_PIPE_WAIT : requests server to wait until a time-out elapses or for an instance of the specified named pipe is available for connection','0x0011c017':'FSCTL_PIPE_TRANSCEIVE : send and receive data from an open pipe','0x001440f2':'FSCTL_SRV_COPYCHUNK : server-side data movement, aka copy data with server and destination on the same server','0x00144064':'FSCTL_SRV_ENUMERATE_SNAPSHOTS : enumerate available previous versions for a share','0x00140078':'FSCTL_SRV_REQUEST_RESUME_KEY : retrieve an opaque file reference for use with the IOCTL_COPYCHUNK','0x001441bb':'FSCTL_SRV_READ_HASH : retrieve data from the Content Information File associated with a specified file','0x001480f2':'FSCTL_SRV_COPYCHUNK_WRITE : server-side data movement, aka copy data with server and destination on the same server','0x001401d4':'FSCTL_LMR_REQUEST_RESILIENCY : request resilient/durable handle for specified open file, handle survives a short network outage','0x001401fc':'FSCTL_QUERY_NETWORK_INTERFACE_INFO : query network info from server','0x000900a4':'FSCTL_SET_REPARSE_POINT : Sets a reparse point on a file or directory.Reparse point: An attribute that can be added to a file to store a collection of user-defined data that is opaque to NTFS or ReFS.','0x000601b0':'FSCTL_DFS_GET_REFERRALS_EX : request distributed file system referrals'}
 # Durable file handles allow a connection to an SMB server to survive a short network outage; resilient file handles are durable file handles opened by a IOCTL request
+smb2_ioctl_function_dict = {'0x00060194':'FSCTL_DFS_GET_REFERRALS : request distributed file system referrals','0x0011400c':'FSCTL_PIPE_PEEK : requests server to copy named pipe\'s data into returned buffer (for preview) without removing it','0x00110018':'FSCTL_PIPE_WAIT : requests server to wait until a time-out elapses or for an instance of the specified named pipe is available for connection','0x0011c017':'FSCTL_PIPE_TRANSCEIVE : send and receive data from an open pipe','0x001440f2':'FSCTL_SRV_COPYCHUNK : server-side data movement, aka copy data with server and destination on the same server','0x00144064':'FSCTL_SRV_ENUMERATE_SNAPSHOTS : enumerate available previous versions for a share','0x00140078':'FSCTL_SRV_REQUEST_RESUME_KEY : retrieve an opaque file reference for use with the IOCTL_COPYCHUNK','0x001441bb':'FSCTL_SRV_READ_HASH : retrieve data from the Content Information File associated with a specified file','0x001480f2':'FSCTL_SRV_COPYCHUNK_WRITE : server-side data movement, aka copy data with server and destination on the same server','0x001401d4':'FSCTL_LMR_REQUEST_RESILIENCY : request resilient/durable handle for specified open file, handle survives a short network outage','0x001401fc':'FSCTL_QUERY_NETWORK_INTERFACE_INFO : query network info from server','0x000900a4':'FSCTL_SET_REPARSE_POINT : Sets a reparse point on a file or directory.Reparse point: An attribute that can be added to a file to store a collection of user-defined data that is opaque to NTFS or ReFS.','0x000601b0':'FSCTL_DFS_GET_REFERRALS_EX : request distributed file system referrals','0x000900c0':'FSCTL_CREATE_OR_GET_OBJECT_ID : Retrieves the object identifier for the specified file or directory', '0x00094264':'FSCTL_OFFLOAD_READ : Requests the server ro perform an Offload Read operation to a specified portion of a file on a target volume'}
 
 smb2_cmd_dict = {'0x00':'smb2_negotiation','0x01':'smb2_session_establishment','0x02':'smb2_logoff','0x03':'smb2_tree_connect','0x04':'smb2_tree_disconnect','0x05':'smb2_open_file','0x06':'smb2_close_file','0x07':'smb2_flush','0x08':'smb2_read_file','0x09':'smb2_write_file','0x0a':'smb2_locking','0x0b':'smb2_ioctl','0x0c':'smb2_cancel','0x0d':'smb2_echo','0x0e':'smb2_find','0x0f':'smb2_change_notify','0x10':'smb2_query_info','0x11':'smb2_set_info','0x12':'smb2_oplock_break'}
 smb2_share_type_dict = {'0x00000001':'Physical Disk','0x00000002':'Named Pipe'}
@@ -185,6 +185,7 @@ except Exception as e:
 	print(e)
 	exit(1)
 
+	
 #version string
 smbtimelineversion = '0.1001'
 
@@ -397,7 +398,7 @@ def tsharkfilter (inputfile,filter,filepath,filtername):
 	#for aline in output:
 	#	f.write(aline)
 	while True:
-		line = process.stdout.readline().decode('UTF-8')
+		line = process.stdout.readline().decode('UTF-8','ignore')
 		if line != '':
 			f.write(line)
 		else:
@@ -416,7 +417,7 @@ def tsharkfilter (inputfile,filter,filepath,filtername):
 	# TODO: read process.stderr.readline().decode('UTF-8') and write to protocol
 
 #
-# function to run tshark filer using json output of tshark
+# function to run tshark filter using json output of tshark
 # json output can be combined with -e fieldnames -> this output loses the capability to exactly match commands and parameters in case of two smb commands in one frame
 # Parameter inputfile: input pcap 
 # Parameter filter: the tshark filter which should be used with tshark
@@ -447,7 +448,7 @@ def tsharkfilter_json(inputfile,filter,filepath,filtername):
 	process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	f = open(filepath,"w", encoding="utf-8")
 	while True:
-		line = process.stdout.readline().decode('UTF-8')
+		line = process.stdout.readline().decode('UTF-8','ignore')
 		if line !='':
 			f.write(line)
 		else:
@@ -593,7 +594,7 @@ def createInfoFieldDict (infile):
 	command = ['tshark', '-n', '-r', infile , '-E', 'separator=,', '-E', 'quote=d', '-T', 'fields', '-e', 'frame.number', '-e', '_ws.col.Info']  # the shell command
 	process2 = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	while True:
-		line = process2.stdout.readline().decode('UTF-8')
+		line = process2.stdout.readline().decode('UTF-8','ignore')
 		if line != '':
 			# splint line on first occurance of , into frame.number as key and info cloumn as valuse
 			list_line = line.split(',',1)
@@ -733,8 +734,17 @@ def handle_packet(packet,filtername,timelinewriter):
 		for svcctl_key,svcctl_val in p.get('layers',{}).get('svcctl','').items():
 			if 'Service Name:' in svcctl_key:
 				row['svcctl.servicename'] = svcctl_val.get('svcctl.servicename','')
+			if 'svcctl_CreateServiceA.ServiceName' in svcctl_key:
+				row['svcctl.servicename'] = svcctl_val
 			if 'Display Name:' in svcctl_key:
 				row['svcctl.displayname'] = svcctl_val.get('svcctl.displayname','')
+			if 'svcctl.svcctl_CreateServiceA.DisplayName' in svcctl_key:
+				row['svcctl.servicename'] = svcctl_val
+			if 'svcctl.svcctl_CreateServiceA.binary_path' in svcctl_key:
+				row['svcctl.binarypath'] = svcctl_val
+			if 'svcctl.svcctl_CreateServiceA.start_type' in svcctl_key:
+				row['svcctl.servicetype'] = svcctl_val
+
 
 	# deal with atsvc
 	if('atsvc' in p['layers']):
@@ -785,7 +795,8 @@ def handle_packet(packet,filtername,timelinewriter):
 		# get values from header	
 		# take 'smb.mid','smb.uid','smb.pid','smb.tid','smb.fid', from header
 		row['smb.cmd'] = ps_header.get('smb.cmd','')
-		row['smb_action'] = smb_cmd_dict.get(format(int(row['smb.cmd']),'#04x'),'Error parsing smb command')	
+#		row['smb_action'] = smb_cmd_dict.get(format(int(row['smb.cmd']),'#04x'),'Error parsing smb command')	
+		row['smb_action'] = smb_cmd_dict.get(row['smb.cmd'],'Error parsing smb command')
 		row['smb.mid'] = ps_header.get('smb.mid','')
 		row['smb.uid'] = ps_header.get('smb.uid','')
 		row['smb.pid'] = ps_header.get('smb.pid','')
@@ -815,7 +826,8 @@ def handle_packet(packet,filtername,timelinewriter):
 			tmp_trans2_actionList = []
 			tmp_trans2_cmd = ps_entry.get('smb.trans2.cmd','')
 			# use tmp_trans2_cmd in smbtimeline field, if it is a smb_trans2 request
-			if format(int(row['smb.cmd']),'#04x') == '0x32' and len(tmp_trans2_cmd) > 0:
+#			if format(int(row['smb.cmd']),'#04x') == '0x32' and len(tmp_trans2_cmd) > 0:
+			if row['smb.cmd'] == '0x32' and len(tmp_trans2_cmd) > 0:
 				tmp_trans2_actionList = smb_trans2_subcmd_dict.get(format(int(tmp_trans2_cmd),'#06x'),format(int(tmp_trans2_cmd),'#06x')).split(':')
 				if len(tmp_trans2_actionList) > 1:
 					row['info'] = row.get('info','') + ' ' + tmp_trans2_actionList[1]
@@ -1012,22 +1024,84 @@ def handle_packet(packet,filtername,timelinewriter):
 			# as of today only snego.negTokenTarg_element seems to be intersting, other items containing ntlmssp: spnego.negTokenInit_element
 			tmp_ntlmssp = ps_entry.get('smb2.security_blob_tree',{}).get('gss-api',{}).get('spnego',{}).get('spnego.negTokenTarg_element',{}).get('ntlmssp',{})
 			if len(row.get('requestingHostname','')) == 0:
-				row['requestingHostname'] = tmp_ntlmssp.get('ntlmssp.auth.hostname','')
+				#FIX FOR BUG: CHECK-IN
+				#sometimes ntlmssp is returned as list and sometimes as dict, we need to check and act accordingly
+				if isinstance(tmp_ntlmssp, list):
+					for b in tmp_ntlmssp:
+						tmp_hostname = b.get('ntlmssp.auth.hostname','')
+						if len(tmp_hostname) > 0:
+							row['requestingHostname'] = tmp_hostname
+							break
+				elif isinstance(tmp_ntlmssp, dict):
+						tmp_ntlmssp.get('ntlmssp.auth.hostname','')
+				else:
+					#do nothing
+					continue
+				#print(tmp_ntlmssp)
+				#row['requestingHostname'] = tmp_ntlmssp.get('ntlmssp.auth.hostname','')
+				#FIX FOR BUG: CHECK-IN
 			if len(row.get('domain','')) == 0:
-				row['domain'] = tmp_ntlmssp.get('ntlmssp.auth.domain','')
+				#FIX FOR BUG: CHECK-IN
+				#sometimes ntlmssp is returned as list and sometimes as dict, we need to check and act accordingly
+				if isinstance(tmp_ntlmssp, list):
+					for b in tmp_ntlmssp:
+						tmp_hostname = b.get('ntlmssp.auth.domain','')
+						if len(tmp_hostname) > 0:
+							row['domain'] = tmp_hostname
+							break
+				elif isinstance(tmp_ntlmssp, dict):
+						tmp_ntlmssp.get('ntlmssp.auth.domain','')
+				else:
+					#do nothing
+					continue
+				#FIX FOR BUG: CHECK-IN
+#				row['domain'] = tmp_ntlmssp.get('ntlmssp.auth.domain','')
 			if len(row.get('account','')) == 0:
-				row['account'] = tmp_ntlmssp.get('ntlmssp.auth.username','')
+				#FIX FOR BUG: CHECK-IN
+				#sometimes ntlmssp is returned as list and sometimes as dict, we need to check and act accordingly
+				if isinstance(tmp_ntlmssp, list):
+					for b in tmp_ntlmssp:
+						tmp_hostname = b.get('ntlmssp.auth.username','')
+						if len(tmp_hostname) > 0:
+							row['account'] = tmp_hostname
+							break
+				elif isinstance(tmp_ntlmssp, dict):
+						tmp_ntlmssp.get('ntlmssp.auth.username','')
+				else:
+					#do nothing
+					continue
+				#FIX FOR BUG: CHECK-IN
+#				row['account'] = tmp_ntlmssp.get('ntlmssp.auth.username','')
 			# probably just session setup, TODO: check weather it is only needed for session setup and response, if so add check.
-			for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in tmp_ntlmssp.get('ntlmssp.challenge.target_info',{}).items():
-				if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
-					row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_computer_name','')
-				if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
-					row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_domain_name','')
-			for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in tmp_ntlmssp.get('ntlmssp.auth.ntresponse_tree',{}).get('ntlmssp.ntlmv2_response_tree',{}).items():
-				if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
-					row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_computer_name','')
-				if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
-					row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_domain_name','')
+			#FIX FOR BUG: CHECK-IN
+			#Sometimes tmp_ntlmssp is a list, sometimes a dict, same as above, we need to check for this and act accordingly.
+			if isinstance(tmp_ntlmssp, list):
+				for b in tmp_ntlmssp:
+					for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in b.get('ntlmssp.challenge.target_info',{}).items():
+						if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
+							row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_computer_name','')
+						if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
+							row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_domain_name','')
+					for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in b.get('ntlmssp.auth.ntresponse_tree',{}).get('ntlmssp.ntlmv2_response_tree',{}).items():
+						if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
+							row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_computer_name','')
+						if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
+							row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_domain_name','')
+			elif isinstance(tmp_ntlmssp, dict):
+				for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in tmp_ntlmssp.get('ntlmssp.challenge.target_info',{}).items():
+					if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
+						row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_computer_name','')
+					if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
+						row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.challenge.target_info.nb_domain_name','')
+				for tmp_ntlmssp_entry_name,tmp_ntlmssp_entry in tmp_ntlmssp.get('ntlmssp.auth.ntresponse_tree',{}).get('ntlmssp.ntlmv2_response_tree',{}).items():
+					if 'Attribute: NetBIOS computer name:' in tmp_ntlmssp_entry_name and len(row['requestingHostname']) == 0:
+						row['requestingHostname'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_computer_name','')
+					if 'Attribute: NetBIOS domain name:' in tmp_ntlmssp_entry_name and len(row['domain']) == 0:
+						row['domain'] = tmp_ntlmssp_entry.get('ntlmssp.ntlmv2_response.nb_domain_name','')
+			else:
+				#do nothing
+				continue
+			#FIX FOR BUG: CHECK-IN
 					
 			#get smb2.fid from guid handle entriesFile:*
 			for k,v in ps_entry.items():
@@ -1810,9 +1884,11 @@ def enrich_opnum(row):
 	# deal which servicename and displayname if they are set
 	tmp_svcctl_servicename = row.pop('svcctl.servicename','')
 	tmp_svcctl_displayname = row.pop('svcctl.displayname','')
-	if len(tmp_svcctl_servicename) > 0 or len(tmp_svcctl_displayname) > 0:
-		row['service_info'] = ' Servicename:' + tmp_svcctl_servicename + ' Displayname:' + tmp_svcctl_displayname
-		service_info_dict[row['frame.number']] = ' Servicename:' + tmp_svcctl_servicename + ' Displayname:' + tmp_svcctl_displayname
+	tmp_svcctl_binary_path = row.pop('svcctl.binarypath','')
+	tmp_svcctl_service_type = row.pop('svcctl.servicetype','')
+	if len(tmp_svcctl_servicename) > 0 or len(tmp_svcctl_displayname) > 0 or len(tmp_svcctl_binary_path) > 0 or len(tmp_svcctl_service_type) > 0:
+		row['service_info'] = ' Servicename:' + tmp_svcctl_servicename + ' Displayname:' + tmp_svcctl_displayname + ' Binary Path:' + tmp_svcctl_binary_path + ' Service Type:' + tmp_svcctl_service_type
+		service_info_dict[row['frame.number']] = ' Servicename:' + tmp_svcctl_servicename + ' Displayname:' + tmp_svcctl_displayname + ' Binary Path:' + tmp_svcctl_binary_path + ' Service Type:' + tmp_svcctl_service_type
 	else:
 		if len(row.get('smb.response_to','')) > 0:
 			#smb1, check if corresponding request has service_info string
@@ -2134,7 +2210,8 @@ def l2toutput(l2toutput_file,smb1timeline,smb2timeline,delimiterChar):
 			new_row['date'] = row['frame.date_epoch']
 			new_row['time'] = row['frame.time_epoch']
 			new_row['timezone'] = row['timezone']
-			new_row['MACB'] = MACBString(format(int(row['smb.cmd']),'#04x'),row.get('smb.create.action',''),'1',row.get('subProto_opnum','')) # if smb write: M, if read and smb.create 1: A, if read and smb.create C,
+#			new_row['MACB'] = MACBString(format(int(row['smb.cmd']),'#04x'),row.get('smb.create.action',''),'1',row.get('subProto_opnum','')) # if smb write: M, if read and smb.create 1: A, if read and smb.create C,
+			new_row['MACB'] = MACBString(row['smb.cmd'],row.get('smb.create.action',''),'1',row.get('subProto_opnum','')) # if smb write: M, if read and smb.create 1: A, if read and smb.create C,
 			new_row['source'] = 'pcap'
 			new_row['sourcetype'] = 'pcap ' + inputfile + ' parsed by smbtimeline'
 			new_row['type'] = row.get('smb_action','') + ' ' + row.get('status','')

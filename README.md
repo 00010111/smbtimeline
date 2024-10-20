@@ -76,6 +76,9 @@ https://www.youtube.com/watch?v=g85W8FOu6oU
 ## Change History
  * Version 0.1001:
 	* Bug fix in handling smb2.ioctl.function, which have resulted in exception
+	* extracts service executable path and service type from traffic, if these fields are extracted by TShark.
+	* Changed all readline().decode('UTF-8') operations to readline().decode('UTF-8','ignore'). While this might cause some missing chracters, it makes to code much more stable.
+	* added support for addition smb2 ioctl codes
  * Version 0.1000:
     * json output of tshark is now used to export data from pcap eliminating the past limitations regarding multiple SMB/RPC commands in a frame.
 	* csv output of tshark is now deprecated
